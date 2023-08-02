@@ -3,5 +3,139 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "my-core": {
+      "projectType": "library",
+      "root": "projects/core",
+      "sourceRoot": "projects/core/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/core/tsconfig.lib.json",
+            "project": "projects/core/ng-package.json"
+          }
+        },
+       "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/core/src/**/*.ts",
+              "projects/core/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "core-demo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+      "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/core-demo",
+      "sourceRoot": "projects/core-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/core-demo",
+            "index": "projects/core-demo/src/index.html",
+            "main": "projects/core-demo/src/main.ts",
+            "polyfills": "projects/core-demo/src/polyfills.ts",
+            "tsConfig": "projects/core-demo/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/core-demo/src/favicon.ico",
+              "projects/core-demo/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/core/src/styles"
+              ]
+            },
+            "styles": [
+              "projects/core-demo/src/styles.scss"
+            ],
+            "scripts": [],
+            "allowedCommonJsDependencies": ["ip-regex"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "1mb",
+                  "maximumError": "3mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "30kb",
+                  "maximumError": "35kb"                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+        "options": {
+            "port": 4444
+          },
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "core-demo:build:production"
+            },
+            "development": {
+              "browserTarget": "core-demo:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "core-demo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/core-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/core-demo/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/core-demo/src/favicon.ico",
+              "projects/core-demo/src/assets"
+            ],
+            "styles": [
+              "projects/core-demo/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }

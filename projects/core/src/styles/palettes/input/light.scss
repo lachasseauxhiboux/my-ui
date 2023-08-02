@@ -1,0 +1,26 @@
+@mixin input-light($theme: '') {
+  --#{$theme}input-empty-bg: var(--light--neutral-color-2);
+  --#{$theme}input-empty-border: var(--light--neutral-color-6);
+
+  --#{$theme}input-bg-hover: var(--light--neutral-color-2);
+
+  --#{$theme}input-border-hover: var(--light--btn-hover-color);
+  --#{$theme}input-bg-focus: var(--light--neutral-color-1);
+
+  --#{$theme}input-filled-bg: var(--light--neutral-color-1);
+  --#{$theme}input-filled-border: var(--light--neutral-color-6);
+
+  --#{$theme}input-bg-disabled: var(--light--btn-disabled-color);
+  --#{$theme}input-border-disabled: var(--light--black-100);
+  --#{$theme}input-border-disabled-transparency: var(--transparency-5);
+
+  --#{$theme}input-icon: var(--light--font-disabled-color);
+  --#{$theme}input-icon-disabled: var(--light--font-disabled-color);
+
+  --#{$theme}input-hide-icon-fill: var(--light--font-gray-1-color);
+  --#{$theme}input-hide-icon-fill-hover: var(--light--neutral-color-3);
+
+  --#{$theme}input-placeholder: var(--light--font-disabled-color);
+  --#{$theme}input-placeholder-disabled: var(--light--font-disabled-color);
+  --#{$theme}input-text-disabled: var(--light--font-disabled-color);
+}

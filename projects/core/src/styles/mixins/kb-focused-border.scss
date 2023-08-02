@@ -1,0 +1,3 @@
+@mixin kb-focused-border {
+  box-shadow: 0 0 0 2px get-color(interactive-kb-focused-border, interactive-kb-focused-border-transparency);
+}

@@ -1,0 +1,254 @@
+@import "./mixins/clear-input";
+@import "./mixins/kb-focused-border";
+@import "./mixins/svg-fill";
+@import "./mixins/scrollbar-margin";
+@import "./get-color";
+
+$input_height_s: 24px;
+$input_height_m: 36px;
+$input_height_l: 48px;
+
+$textarea_height_s: 136px;
+$textarea_height_m: 176px;
+$textarea_height_l: 216px;
+
+$border_radius_s: 4px;
+$border_radius_m: 4px;
+$border_radius_l: 8px;
+
+$font_size_s: 12px;
+$font_size_m: 14px;
+$font_size_l: 16px;
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;  // For Microsoft Edge to hide an eye icon in a password input
+}
+
+.my-input[my-size=s] {
+  border-radius: $border_radius_s;
+  font-size: $font_size_s;
+}
+
+.my-input[my-size=m] {
+  border-radius: $border_radius_m;
+  font-size: $font_size_m;
+}
+
+.my-input[my-size=l] {
+  border-radius: $border_radius_l;
+  font-size: $font_size_l;
+}
+
+input {
+  &.my-input[my-size=s] {
+    height: $input_height_s;
+  }
+
+  &.my-input[my-size=m] {
+    height: $input_height_m;
+  }
+
+  &.my-input[my-size=l] {
+    height: $input_height_l;
+  }
+}
+
+/* Remove arrows for number input in Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove arrows for number input in Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+textarea {
+  &.my-input[my-size=s] {
+    max-height: $textarea_height_s;
+  }
+
+  &.my-input[my-size=m] {
+    max-height: $textarea_height_m;
+  }
+
+  &.my-input[my-size=l] {
+    max-height: $textarea_height_l;
+  }
+}
+
+input.my-input, textarea.my-input {
+  @include clear-input;
+  padding: 0 1rem;
+  width: 100%;
+  background-color: get-color(input-filled-bg);
+  border: 1px solid get-color(input-filled-border);
+  transition: all .2s ease-in-out;
+  transition-property: background-color, border-color;
+
+  &::placeholder {
+    color: get-color(input-placeholder);
+    font-weight: normal;
+  }
+
+  &:placeholder-shown {
+    background-color: get-color(input-empty-bg);
+    border-color: get-color(input-empty-border);
+  }
+
+  &:hover {
+    background-color: get-color(input-bg-hover);
+    border-color: get-color(input-border-hover);
+  }
+
+  &:focus {
+    background-color: get-color(input-bg-focus);
+    border-color: get-color(input-border-hover);
+  }
+
+  &:disabled {
+    background-color: get-color(input-bg-disabled);
+    border-color: get-color(input-border-disabled, input-border-disabled-transparency);
+    color: get-color(input-text-disabled);
+    cursor: not-allowed;
+
+    &::placeholder {
+      color: get-color(input-placeholder-disabled);
+    }
+  }
+
+  &:not(.visible-invalid) {
+    &:placeholder-shown {
+      border-color: get-color(input-empty-border);
+    }
+
+    &:hover {
+      border-color: get-color(input-border-hover);
+    }
+
+    &:focus {
+      border-color: get-color(input-border-hover);
+    }
+
+    &:disabled {
+      border-color: get-color(input-border-disabled, input-border-disabled-transparency);
+    }
+  }
+
+  &.ng-touched.ng-invalid,
+  &.visible-invalid {
+    border-color: get-color(error-color);
+  }
+
+  &.flat {
+    border: none;
+    border-bottom: 1px solid get-color(btn-color);
+    border-radius: 0;
+
+    padding-left: 0;
+
+    &:placeholder-shown {
+      background-color: get-color(input-filled-bg);
+      border-color: get-color(input-filled-border);
+    }
+
+    &:disabled {
+      background-color: get-color(input-bg-disabled);
+    }
+
+    &.ng-touched.ng-invalid,
+    &.visible-invalid {
+      border-radius: 6px;
+      border: 1px solid get-color(error-color);
+      background-color: get-color(neutral-color-2);
+    }
+
+    &.transparent {
+      background-color: transparent;
+    }
+  }
+
+  &.transparent {
+    background-color: transparent;
+  }
+}
+
+textarea.my-input {
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.my-input.cdk-keyboard-focused {
+  @include kb-focused-border;
+}
+
+.input-icon-left, .input-icon-right {
+  position: relative;
+  display: inline-block;
+
+  .icon, .icon-left, .icon-right {
+    @include svg-fill(get-color(input-icon));
+    color: get-color(input-icon);
+    height: 100%;
+    display: inline-flex;
+    position: absolute;
+    top: 0;
+
+    svg-icon {
+      display: inline-flex;
+      align-self: center;
+      pointer-events: none;
+    }
+
+    [my-icon-button] {
+      display: inline-flex;
+      align-self: center;
+      .my-button_icon {
+        display: flex;
+      }
+    }
+  }
+}
+
+.input-icon-left {
+  input.my-input[my-size=s], input.my-input[my-size=m], input.my-input[my-size=l] {
+    padding-left: 36px;
+  }
+
+  .icon {
+    left: 12px;
+  }
+}
+
+.input-icon-right {
+  input.my-input[my-size=s], input.my-input[my-size=m], input.my-input[my-size=l] {
+    padding-right: 36px;
+  }
+
+  .icon {
+    right: 12px;
+  }
+}
+
+.input-icon-right.input-icon-left {
+  .icon-left {
+    left: 12px;
+  }
+
+  .icon-right {
+    right: 12px;
+  }
+}
+
+input.my-input[disabled] ~ .icon {
+  color: (get-color(input-icon-disabled));
+  @include svg-fill(get-color(input-icon-disabled))
+}
+
+textarea.my-input {
+  @include scrollbar-margin(5px);
+  resize: none;
+}

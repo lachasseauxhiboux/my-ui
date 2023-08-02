@@ -1,0 +1,7 @@
+@mixin svg-fill ($color) {
+  svg {
+    * {
+     fill: $color;
+    }
+  }
+}

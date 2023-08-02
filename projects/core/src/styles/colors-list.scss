@@ -1,0 +1,136 @@
+@import "./get-color";
+
+
+$colors-list:
+  primary-color
+  primary-disabled-color
+  primary-hover-color
+  primary-click-color
+
+  btn-color
+  btn-hover-color
+  btn-click-color
+  btn-disabled-color
+
+  neutral-color-1
+  neutral-color-2
+  neutral-color-3
+  neutral-color-4
+  neutral-color-5
+  neutral-color-6
+  neutral-color-7
+
+  error-color
+  error-back-color
+  error-hover-color
+  error-click-color
+  error-disabled-color
+
+  warning-color
+  success-color
+  link-color
+  link-hovered-color
+  link-click-color
+  link-disable-color
+  red-link-hovered-color
+  red-link-click-color
+
+  black-100
+  white-100
+
+  second-1
+  optional-color
+
+  test-color
+
+  // font colors
+  font-main-color
+  font-gray-1-color
+  font-brand-color
+  font-link-color
+  font-success-color
+  font-warning-color
+  font-error-color
+  font-gray-2-color
+  font-disabled-color;
+
+$palettes: light dark;
+@each $palette in $palettes {
+  @each  $color-name in $colors-list  {
+    .#{$palette}--#{$color-name} {
+      color: get-color-by-theme($palette, $color-name);
+    }
+
+    .#{$palette}--#{$color-name}_bg {
+      background-color: get-color-by-theme($palette, $color-name);
+    }
+
+    .#{$palette}--#{$color-name}_border {
+      border: 1px solid get-color-by-theme($palette, $color-name);
+    }
+
+    .#{$palette}--#{$color-name}_border-top {
+      border-top: 1px solid get-color-by-theme($palette, $color-name);
+    }
+
+    .#{$palette}--#{$color-name}_border-bottom {
+      border-bottom: 1px solid get-color-by-theme($palette, $color-name);
+    }
+
+    .#{$palette}--#{$color-name}_border-left {
+      border-left: 1px solid get-color-by-theme($palette, $color-name);
+    }
+
+    .#{$palette}--#{$color-name}_border-right {
+      border-right: 1px solid get-color-by-theme($palette, $color-name);
+    }
+
+    .#{$palette}--#{$color-name}_st {
+      stop-color: get-color-by-theme($palette, $color-name);
+    }
+
+    .#{$palette}--#{$color-name}_fill {
+      fill: get-color-by-theme($palette, $color-name);
+    }
+
+    [theme]:not([theme='#{$palette}']) [theme='#{$palette}'], [theme='#{$palette}'] {
+      .#{$color-name} {
+        color: get-color-by-theme($palette, $color-name);
+      }
+
+      .#{$color-name}_bg {
+        background-color: get-color-by-theme($palette, $color-name);
+      }
+
+      .#{$color-name}_border {
+        border: 1px solid get-color-by-theme($palette, $color-name);
+      }
+
+      .#{$color-name}_border-top {
+        border-top: 1px solid get-color-by-theme($palette, $color-name);
+      }
+
+      .#{$color-name}_border-bottom {
+        border-bottom: 1px solid get-color-by-theme($palette, $color-name);
+      }
+
+      .#{$color-name}_border-left {
+        border-left: 1px solid get-color-by-theme($palette, $color-name);
+      }
+
+      .#{$color-name}_border-right {
+        border-right: 1px solid get-color-by-theme($palette, $color-name);
+      }
+
+      .#{$color-name}_st {
+        stop-color: get-color-by-theme($palette, $color-name);
+      }
+
+      .#{$color-name}_fill {
+        * {
+          fill: get-color-by-theme($palette, $color-name);
+        }
+      }
+    }
+  }
+}

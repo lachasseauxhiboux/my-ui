@@ -1,0 +1,32 @@
+<main style="display: flex; flex-direction: column; justify-content: space-between;width: 800px;">
+  <section>
+    <div class="layout-top-margin_24" style="display: flex; align-items: center">
+      <label class="layout-margin_8" [for]="i1.id">Name*</label>
+      <div class="input-icon-left">
+        <input myInput size="s" [(ngModel)]="value1" placeholder="Name" required #i1="myInput">
+        <div class="icon">
+          <svg-icon src="assets/icons/icon24/facebook.svg"></svg-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="layout-top-margin_24" style="display: flex; align-items: center">
+      <label class="layout-margin_8" [for]="i2.id">Password</label>
+      <div class="input-icon-left">
+        <input myInput size="m" type="password" placeholder="Password" [(ngModel)]="value1" #i2="myInput">
+        <div class="icon">
+          <svg-icon src="assets/icons/icon24/facebook.svg"></svg-icon>
+        </div>
+      </div>
+    </div>
+    <div class="layout-top-margin_24" style="display: flex; align-items: center">
+      <label class="layout-margin_8" [for]="i3.id">Disabled</label>
+      <div class="input-icon-left">
+        <input myInput disabled size="l" placeholder="Email" [(ngModel)]="value1" #i3="myInput">
+        <div class="icon">
+          <svg-icon src="assets/icons/icon24/facebook.svg"></svg-icon>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

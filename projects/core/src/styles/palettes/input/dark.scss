@@ -1,0 +1,26 @@
+@mixin input-dark($theme: '') {
+  --#{$theme}input-empty-bg: var(--dark--neutral-color-2);
+  --#{$theme}input-empty-border: var(--dark--btn-color);
+
+  --#{$theme}input-bg-hover: var(--dark--neutral-color-2);
+
+  --#{$theme}input-border-hover: var(--dark--btn-hover-color);
+  --#{$theme}input-bg-focus: var(--dark--neutral-color-1);
+
+  --#{$theme}input-filled-bg: var(--dark--neutral-color-1);
+  --#{$theme}input-filled-border: var(--dark--btn-click-color);
+
+  --#{$theme}input-bg-disabled: var(--dark--btn-disabled-color);
+  --#{$theme}input-border-disabled: var(--dark--white-100);
+  --#{$theme}input-border-disabled-transparency: var(--transparency-5);
+
+  --#{$theme}input-icon: var(--dark--neutral-color-7);
+  --#{$theme}input-icon-disabled: var(--dark--font-disabled-color);
+
+  --#{$theme}input-hide-icon-fill: var(--dark--font-gray-1-color);
+  --#{$theme}input-hide-icon-fill-hover: var(--dark--white-100);
+
+  --#{$theme}input-placeholder: var(--dark--font-disabled-color);
+  --#{$theme}input-placeholder-disabled: var(--dark--font-disabled-color);
+  --#{$theme}input-text-disabled: var(--dark--font-disabled-color);
+}

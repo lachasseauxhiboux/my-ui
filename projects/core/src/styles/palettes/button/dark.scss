@@ -1,0 +1,25 @@
+@mixin button-dark($theme: '') {
+  --#{$theme}button-filled-pressed-bg: var(--dark--white-100);
+  --#{$theme}button-filled-pressed-text: var(--dark--link-color);
+  --#{$theme}button-secondary-bg: var(--dark--neutral-color-2);
+  --#{$theme}button-secondary-plus-icon: var(--dark--neutral-color-7);
+  --#{$theme}button-secondary-disabled-plus-icon: var(--dark--neutral-color-6);
+  --#{$theme}button-secondary-disabled-border: var(--dark--neutral-color-5);
+  --#{$theme}button-action-secondary-icon-line: var(--dark--neutral-color-5);
+  --#{$theme}button-action-secondary-icon-arrow: var(--dark--neutral-color-7);
+
+  --#{$theme}icon-button: var(--dark--font-gray-1-color);
+  --#{$theme}icon-button-hover: var(--dark--font-gray-2-color);
+  --#{$theme}icon-button-click: var(--dark--link-color);
+  --#{$theme}icon-button-disabled: var(--dark--font-disabled-color);
+
+  --#{$theme}icon-button-pressed: var(--dark--link-color);
+  --#{$theme}icon-button-pressed-hover: var(--dark--link-hovered-color);
+  --#{$theme}icon-button-pressed-click: var(--dark--link-click-color);
+  --#{$theme}icon-button-pressed-disabled: var(--dark--link-disable-color);
+
+  --#{$theme}icon-button_bg: var(--dark--btn-color);
+  --#{$theme}icon-button-hover_bg: var(--dark--btn-hover-color);
+  --#{$theme}icon-button-active_bg: var(--dark--white-100);
+  --#{$theme}icon-button-active-hover_bg: var(--dark--white-100);
+}

@@ -1,0 +1,5 @@
+{
+  "projects/core/**/*.ts": [
+    "eslint --fix"
+  ]
+}

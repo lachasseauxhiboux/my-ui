@@ -1,0 +1,36 @@
+@mixin clear-input($ignore-fonts: false) {
+  padding: 0;
+  border: 0;
+  border-radius: inherit;
+  background: none;
+  @if not $ignore-fonts {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+  }
+  color: inherit;
+  caret-color: currentColor;
+  outline: 0;
+  appearance: none;
+  word-break: keep-all;
+  -webkit-text-fill-color: currentColor; // for Safari
+
+  &:focus {
+    outline: none;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    -webkit-text-fill-color: inherit;
+    color: inherit;
+    background-color: inherit;
+  }
+  /* Removes FF red border */
+  &:required {
+    box-shadow:none;
+  }
+  &:invalid {
+    box-shadow: none;
+  }
+}

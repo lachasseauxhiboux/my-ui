@@ -1,0 +1,15 @@
+/* This values are the same fore both light and dark themes */
+@mixin transparency-defaults($theme: '') {
+  --#{$theme}transparency-100: 1;
+  --#{$theme}transparency-85: .85;
+  --#{$theme}transparency-80: .80;
+  --#{$theme}transparency-60: .60;
+  --#{$theme}transparency-50: .50;
+  --#{$theme}transparency-40: .40;
+  --#{$theme}transparency-30: .30;
+  --#{$theme}transparency-20: .20;
+  --#{$theme}transparency-15: .15;
+  --#{$theme}transparency-10: .10;
+  --#{$theme}transparency-5: .05;
+  --#{$theme}transparency-0: 0;
+}

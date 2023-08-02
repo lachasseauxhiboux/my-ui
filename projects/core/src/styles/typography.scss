@@ -1,0 +1,144 @@
+@import "./font-face";
+@import "./get-color";
+@import "./mixins/typography";
+
+* {
+  &:not(text):not(tspan) {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: $normal-weight;
+    font-size: 14px;
+    color: get-color(font-main-color);
+
+    b {
+      font-style: normal;
+      font-weight: $bold-weight;
+
+      i {
+        font-style: italic;
+        font-weight: $bold-weight;
+      }
+    }
+
+    i {
+      font-style: italic;
+      font-weight: $normal-weight;
+
+      b {
+        font-style: italic;
+        font-weight: $bold-weight;
+      }
+    }
+
+    a {
+      color: get-color(font-link-color);
+      text-decoration: none;
+
+      * {
+        color: get-color(font-link-color);
+      }
+    }
+
+    .my-text_display {
+      @include my-text_display();
+    }
+
+    .my-text_display-3 {
+      @include my-text_display-3();
+    }
+
+    h1, header, .my-text_h1 {
+      @include my-text_h1();
+    }
+
+    h2, .my-text_h2 {
+      @include my-text_h2();
+    }
+
+    h3, .my-text_h3 {
+      @include my-text_h3();
+    }
+
+    h4, .my-text_h4 {
+      @include my-text_h4();
+    }
+
+    h5, h6, .my-text_h5 {
+      @include my-text_h5();
+    }
+
+    .my-text_body-1 {
+      @include my-text_body-1();
+    }
+
+    .my-text_body-2, p {
+      @include my-text_body-2();
+    }
+
+    .my-text_body-3 {
+      @include my-text_body-3();
+    }
+
+    .my-text_caption-1, .my-text_body-s, small {
+      @include my-text_caption-1();
+    }
+
+    .my-text_caption-2 {
+      @include my-text_caption-2();
+    }
+
+    .my-text_label, label {
+      @include my-text_label();
+    }
+
+    .uppercase {
+      text-transform: uppercase;
+    }
+
+    .lowercase {
+      text-transform: lowercase;
+    }
+
+    /*
+    * Text colors
+    */
+
+    .my-text_color {
+      &-main {
+        color: get-color(font-main-color);
+      }
+
+      &-gray {
+        color: get-color(font-gray-1-color);
+      }
+
+      &-gray-2 {
+        color: get-color(font-gray-2-color);
+      }
+
+      &-brand {
+        color: get-color(font-brand-color);
+      }
+
+      &-link {
+        color: get-color(font-link-color);
+      }
+
+      &-success {
+        color: get-color(font-success-color);
+      }
+
+      &-warning {
+        color: get-color(font-warning-color);
+      }
+
+      &-error {
+        color: get-color(font-error-color);
+      }
+
+      &-disabled {
+        color: get-color(font-disabled-color);
+      }
+    }
+  }
+}

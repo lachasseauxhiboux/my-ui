@@ -1,0 +1,85 @@
+@import "input/dark";
+
+$theme-name: dark;
+
+@mixin theme($use-prefix: false) {
+  $prefix: '';
+  @if ($use-prefix) {
+    $prefix: #{$theme-name}--;
+  }
+
+  @include input-dark($prefix);
+
+  --#{$prefix}primary-color: 69, 162, 147; // #45A293
+  --#{$prefix}primary-hover-color: 91, 173, 159; // #5BAD9F
+  --#{$prefix}primary-click-color: 120, 187, 176; // #78BBB0
+  --#{$prefix}primary-disabled-color: 33, 56, 82; // #213852
+
+  --#{$prefix}btn-color: 55, 94, 138; // #375E8A
+  --#{$prefix}btn-hover-color: 85, 118, 156; // #55769C
+  --#{$prefix}btn-click-color: 115, 142, 173; // #738EAD
+  --#{$prefix}btn-disabled-color: 26, 45, 66; // #1A2D42
+
+  --#{$prefix}neutral-color-1: 14, 24, 36; // #0E1824
+  --#{$prefix}neutral-color-2: 22, 38, 56; // #162638
+  --#{$prefix}neutral-color-3: 31, 52, 76; // #1F344C
+  --#{$prefix}neutral-color-4: 39, 66, 97; // #274261
+  --#{$prefix}neutral-color-5: 47, 80, 117; // #2F5075
+  --#{$prefix}neutral-color-6: 55, 94, 138; // #375E8A
+  --#{$prefix}neutral-color-7: 147, 175, 204; // #93AFCC
+
+  --#{$prefix}error-color: 192, 41, 45; // #C0292D
+  --#{$prefix}error-hover-color: 201, 73, 76; // #C9494C
+  --#{$prefix}error-click-color: 211, 105, 108; // #D3696C
+  --#{$prefix}error-disabled-color: 134, 29, 31; // #861D1F
+
+  --#{$prefix}warning-color: 230, 150, 46; // #E6962E
+  --#{$prefix}success-color: 78, 206, 61; // #4ECE3D
+
+  --#{$prefix}link-color: 10, 164, 240; // #0AA4F0
+  --#{$prefix}link-hovered-color: 47, 178, 242; // #2FB2F2
+  --#{$prefix}link-click-color: 83, 191, 245; // #53BFF5
+  --#{$prefix}link-disable-color: 26, 75, 100; // #1A4B64
+  --#{$prefix}red-link-hovered-color: 238, 74, 74; // #EE4A4A
+  --#{$prefix}red-link-click-color: 241, 106, 106; // #F16A6A
+  --#{$prefix}transparency-link: .32;
+
+  --#{$prefix}black-100: 0, 0, 0;
+  --#{$prefix}white-100: 255, 255, 255;
+
+  --#{$prefix}second-1: 241, 244, 248; // #F1F4F8
+  --#{$prefix}optional-color: 255, 213, 79; // #FFD54F
+
+  --#{$prefix}ext-color-1: 51, 153, 255; // 3399FF
+  --#{$prefix}ext-color-2: 102, 204, 102; // 66CC66
+  --#{$prefix}ext-color-3: 255, 102, 204; // FF66CC
+  --#{$prefix}ext-color-4: 51, 153, 102; // 339966
+  --#{$prefix}ext-color-5: 255, 153, 102; // FF9966
+  --#{$prefix}ext-color-6: 0, 204, 204; // 00CCCC
+  --#{$prefix}ext-color-7: 204, 153, 51; // CC9933
+  --#{$prefix}ext-color-8: 208, 200, 11; // D0C80B
+  --#{$prefix}ext-color-9: 102, 204, 0; // 66CC00
+  --#{$prefix}ext-color-10: 51, 153, 153; // 339999
+  --#{$prefix}ext-color-11: 255, 102, 153; // FF6699
+  --#{$prefix}ext-color-12: 102, 153, 255; // 6699FF
+  --#{$prefix}ext-color-13: 204, 153, 102; // CC9966
+  --#{$prefix}ext-color-14: 153, 204, 51; // 99CC33
+  --#{$prefix}ext-color-15: 153, 153, 153; // 999999
+  --#{$prefix}ext-color-16: 77, 169, 254; // 4DA9FE
+  --#{$prefix}ext-color-17: 204, 102, 102; // CC6666
+  --#{$prefix}ext-color-18: 255, 153, 153; // FF9999
+  --#{$prefix}ext-color-19: 153, 153, 255; // 9999FF
+  --#{$prefix}ext-color-20: 102, 153, 153; // 669999
+  --#{$prefix}ext-color-21: 255, 225, 10; // FFE10A
+  --#{$prefix}ext-color-22: 255, 252, 170; // FFFCAA
+
+  --#{$prefix}test-color: 0, 255, 0;
+}
+
+[theme=#{$theme-name}] {
+  @include theme();
+}
+
+:root {
+  @include theme(true);
+}

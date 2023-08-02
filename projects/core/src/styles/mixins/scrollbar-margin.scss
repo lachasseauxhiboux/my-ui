@@ -1,0 +1,17 @@
+@mixin scrollbar-margin($margin) {
+  $scroll_width: 6px;
+
+  &::-webkit-scrollbar {
+    width: $scroll_width + 2 * $margin;
+  }
+
+  &::-webkit-scrollbar-track {
+    border: $margin solid transparent;
+    background-clip: padding-box;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: $margin solid transparent;
+    background-clip: padding-box;
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "core",
+  "version": "0.0.1",
+  "description": "UI kit library",
+  "author": {
+    "name": "Pavel Kuldyshev",
+    "email": "pkuldyshev@gmail.com"
+  },
+  "peerDependencies": {
+    "@angular/common": "~16.1.0",
+    "@angular/core": "~16.1.0",
+    "@angular/cdk": "~16.1",
+    "date-fns": "^2.30.0",
+    "ip-regex": "^5.0.0",
+    "lodash-es": "^4.17.21",
+    "rxjs": "^7.8.1",
+    "tlds": "^1.240.0",
+    "tslib": "^2.3.0",
+    "tweenjs": "^1.0.2"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
