@@ -1,1 +1,1 @@
-export * from './ng-var';
+export * from './ng-with';

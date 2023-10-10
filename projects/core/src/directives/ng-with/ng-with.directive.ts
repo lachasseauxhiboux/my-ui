@@ -6,7 +6,7 @@ export class NgWithContext<T> {
 }
 
 @Directive({
-  selector: '[ngVar][ngVar]'
+  selector: '[ngWith][ngWithAs]'
 })
 export class NgWithDirective<T> {
 

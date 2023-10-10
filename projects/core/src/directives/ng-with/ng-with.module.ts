@@ -1,6 +1,6 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
-import {NgWithDirective} from './ng-var.directive';
+import {NgWithDirective} from './ng-with.directive';
 
 @NgModule({
   imports: [CommonModule],
