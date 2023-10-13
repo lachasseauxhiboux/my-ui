@@ -1,24 +1,47 @@
-<div class="fill-page layout-column flex-grow">
-  <div class="layout-row layout-padding_16">
-    <svg-icon src="assets/icons/logo.svg" class="layout-right-margin_24"></svg-icon>
-    <h1 class="layout-right-margin_24">My Personal UI kit</h1>
-    <div class="flex-noshrink">
-
-    </div>
-  </div>
-  <div class="layout-row flex-grow">
-    <div class="flex-noshrink list-pane">
-      <a
-        *ngFor="let section of SECTIONS"
-        class="section"
-        [class.active]="isSectionActive(section)"
-        (click)="setActiveSection(section)"
-      >
-        {{section.title}}
-      </a>
-    </div>
-    <div class="flex-grow main-pane">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+<div class="grid-container">
+  <header>
+    <svg-icon src="assets/icons/logo.svg"></svg-icon>
+    <h1>My Personal UI kit</h1>
+    <div></div>
+  </header>
+  <nav>
+    <a
+      *ngFor="let section of SECTIONS"
+      class="section"
+      [class.active]="isSectionActive(section)"
+      (click)="setActiveSection(section)"
+    >
+      {{section.title}}
+    </a>
+  </nav>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
 </div>
+
+
+<!-- <div class="fill-page layout-column flex-grow"> -->
+<!--   <div class="layout-row layout-padding_16"> -->
+<!--     <svg-icon src="assets/icons/logo.svg" class="layout-right-margin_24"></svg-icon> -->
+<!--     <h1 class="layout-right-margin_24">My Personal UI kit</h1> -->
+<!--     <div class="flex-noshrink"> -->
+<!--  -->
+<!--     </div> -->
+<!--   </div> -->
+<!--   <div class="layout-row flex-grow"> -->
+<!--     <div class="flex-noshrink list-pane"> -->
+<!--       <a -->
+<!--         *ngFor="let section of SECTIONS" -->
+<!--         class="section" -->
+<!--         [class.active]="isSectionActive(section)" -->
+<!--         (click)="setActiveSection(section)" -->
+<!--       > -->
+<!--         {{section.title}} -->
+<!--       </a> -->
+<!--     </div> -->
+<!--     <div class="flex-grow main-pane"> -->
+<!--       <router-outlet></router-outlet> -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- </div> -->
+

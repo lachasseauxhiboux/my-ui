@@ -1,5 +1,4 @@
-$normal-weight: 400;
-$bold-weight: 600;
+@import "../variables.scss";
 
 @mixin my-text_display() {
   font-size: 33px;

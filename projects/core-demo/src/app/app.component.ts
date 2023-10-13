@@ -11,7 +11,7 @@ import { Theme, ThemeService } from '@core';
 export class AppComponent {
   readonly SECTIONS = sections;
 
- activeSection = sections[0];
+  activeSection = sections[0];
 
   readonly THEME = Theme;
 
