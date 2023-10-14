@@ -1,0 +1,13 @@
+@mixin font-colors-dark($theme: '') {
+  --#{$theme}font-main-color: 255, 255, 255; // #ffffff
+  --#{$theme}font-red-color: 255, 101, 101; // #FF6565
+  --#{$theme}font-gray-1-color: 147, 175, 204; // #93AFCC
+  --#{$theme}font-gray-2-color: 201, 215, 230; // #C9D7E6
+  --#{$theme}font-brand-color: var(--dark--primary-color);
+  --#{$theme}font-link-color: var(--dark--link-color);
+  --#{$theme}font-success-color: var(--dark--success-color);
+  --#{$theme}font-warning-color: var(--dark--warning-color);
+  --#{$theme}font-error-color: var(--dark--error-color);
+  --#{$theme}font-disabled-color: 103, 122, 143; // #677A8F
+  --#{$theme}font-main-inverse-color: 38, 60, 82; // #263c52
+}

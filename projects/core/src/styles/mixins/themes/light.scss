@@ -1,7 +1,9 @@
+@import "font-colors/light";
 @import "input/light";
 
 @mixin light($prefix: '') {
 
+  @include font-colors-dark($prefix);
   @include input-light($prefix);
 
   --#{$prefix}primary-color: 69, 162, 147; // #45A293
