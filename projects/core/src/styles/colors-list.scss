@@ -54,81 +54,81 @@ $colors-list:
   font-gray-2-color
   font-disabled-color;
 
-$palettes: light dark;
-@each $palette in $palettes {
+$themes: light dark;
+@each $theme in $themes {
   @each  $color-name in $colors-list  {
-    .#{$palette}--#{$color-name} {
-      color: get-color-by-theme($palette, $color-name);
+    .#{$theme}--#{$color-name} {
+      color: get-color-by-theme($theme, $color-name);
     }
 
-    .#{$palette}--#{$color-name}_bg {
-      background-color: get-color-by-theme($palette, $color-name);
+    .#{$theme}--#{$color-name}_bg {
+      background-color: get-color-by-theme($theme, $color-name);
     }
 
-    .#{$palette}--#{$color-name}_border {
-      border: 1px solid get-color-by-theme($palette, $color-name);
+    .#{$theme}--#{$color-name}_border {
+      border: 1px solid get-color-by-theme($theme, $color-name);
     }
 
-    .#{$palette}--#{$color-name}_border-top {
-      border-top: 1px solid get-color-by-theme($palette, $color-name);
+    .#{$theme}--#{$color-name}_border-top {
+      border-top: 1px solid get-color-by-theme($theme, $color-name);
     }
 
-    .#{$palette}--#{$color-name}_border-bottom {
-      border-bottom: 1px solid get-color-by-theme($palette, $color-name);
+    .#{$theme}--#{$color-name}_border-bottom {
+      border-bottom: 1px solid get-color-by-theme($theme, $color-name);
     }
 
-    .#{$palette}--#{$color-name}_border-left {
-      border-left: 1px solid get-color-by-theme($palette, $color-name);
+    .#{$theme}--#{$color-name}_border-left {
+      border-left: 1px solid get-color-by-theme($theme, $color-name);
     }
 
-    .#{$palette}--#{$color-name}_border-right {
-      border-right: 1px solid get-color-by-theme($palette, $color-name);
+    .#{$theme}--#{$color-name}_border-right {
+      border-right: 1px solid get-color-by-theme($theme, $color-name);
     }
 
-    .#{$palette}--#{$color-name}_st {
-      stop-color: get-color-by-theme($palette, $color-name);
+    .#{$theme}--#{$color-name}_st {
+      stop-color: get-color-by-theme($theme, $color-name);
     }
 
-    .#{$palette}--#{$color-name}_fill {
-      fill: get-color-by-theme($palette, $color-name);
+    .#{$theme}--#{$color-name}_fill {
+      fill: get-color-by-theme($theme, $color-name);
     }
 
-    [theme]:not([theme='#{$palette}']) [theme='#{$palette}'], [theme='#{$palette}'] {
+    [theme]:not([theme='#{$theme}']) [theme='#{$theme}'], [theme='#{$theme}'] {
       .#{$color-name} {
-        color: get-color-by-theme($palette, $color-name);
+        color: get-color-by-theme($theme, $color-name);
       }
 
       .#{$color-name}_bg {
-        background-color: get-color-by-theme($palette, $color-name);
+        background-color: get-color-by-theme($theme, $color-name);
       }
 
       .#{$color-name}_border {
-        border: 1px solid get-color-by-theme($palette, $color-name);
+        border: 1px solid get-color-by-theme($theme, $color-name);
       }
 
       .#{$color-name}_border-top {
-        border-top: 1px solid get-color-by-theme($palette, $color-name);
+        border-top: 1px solid get-color-by-theme($theme, $color-name);
       }
 
       .#{$color-name}_border-bottom {
-        border-bottom: 1px solid get-color-by-theme($palette, $color-name);
+        border-bottom: 1px solid get-color-by-theme($theme, $color-name);
       }
 
       .#{$color-name}_border-left {
-        border-left: 1px solid get-color-by-theme($palette, $color-name);
+        border-left: 1px solid get-color-by-theme($theme, $color-name);
       }
 
       .#{$color-name}_border-right {
-        border-right: 1px solid get-color-by-theme($palette, $color-name);
+        border-right: 1px solid get-color-by-theme($theme, $color-name);
       }
 
       .#{$color-name}_st {
-        stop-color: get-color-by-theme($palette, $color-name);
+        stop-color: get-color-by-theme($theme, $color-name);
       }
 
       .#{$color-name}_fill {
         * {
-          fill: get-color-by-theme($palette, $color-name);
+          fill: get-color-by-theme($theme, $color-name);
         }
       }
     }

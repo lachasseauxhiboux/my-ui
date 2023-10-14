@@ -1,12 +1,6 @@
 @import "input/dark";
 
-$theme-name: dark;
-
-@mixin theme($use-prefix: false) {
-  $prefix: '';
-  @if ($use-prefix) {
-    $prefix: #{$theme-name}--;
-  }
+@mixin dark($prefix: '') {
 
   @include input-dark($prefix);
 
@@ -76,10 +70,3 @@ $theme-name: dark;
   --#{$prefix}test-color: 0, 255, 0;
 }
 
-[theme=#{$theme-name}] {
-  @include theme();
-}
-
-:root {
-  @include theme(true);
-}

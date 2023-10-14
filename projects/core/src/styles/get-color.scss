@@ -1,12 +1,12 @@
-@function get-color-rgb-by-theme($palette, $color-name) {
-  @return var(--#{$palette}--#{$color-name});
+@function get-color-rgb-by-theme($theme, $color-name) {
+  @return var(--#{$theme}--#{$color-name});
 }
 
-@function get-color-by-theme($palette, $color-name, $transparency: null) {
+@function get-color-by-theme($theme, $color-name, $transparency: null) {
   @if ($transparency) {
-    @return rgba(get-color-rgb-by-theme($palette, $color-name), var(--#{$transparency}));
+    @return rgba(get-color-rgb-by-theme($theme, $color-name), var(--#{$transparency}));
   }
-  @return rgb(get-color-rgb-by-theme($palette, $color-name));
+  @return rgb(get-color-rgb-by-theme($theme, $color-name));
 }
 
 @function get-color($color-name, $transparency: null) {

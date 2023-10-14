@@ -1,0 +1,15 @@
+@import "./reset";
+@import "./colors-list";
+@import "./mixins/themes/theme";
+
+:root {
+  @include theme('');
+}
+
+[theme=dark] {
+  @include theme(dark--);
+}
+
+[theme=light] {
+  @include theme(light--);
+}

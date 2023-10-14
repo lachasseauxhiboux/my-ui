@@ -15,14 +15,14 @@ export class AppComponent {
 
   readonly THEME = Theme;
 
-  selectedTheme = Theme.LIGHT;
+  selectedTheme = Theme.DARK;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private themeService: ThemeService
   ) {
-    this.setTheme(Theme.LIGHT);
+    this.setTheme(Theme.DARK);
   }
 
   setTheme(theme: Theme) {

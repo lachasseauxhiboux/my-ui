@@ -1,12 +1,6 @@
 @import "input/light";
 
-$theme-name: light;
-
-@mixin theme($use-prefix: false) {
-  $prefix: '';
-  @if ($use-prefix) {
-    $prefix: #{$theme-name}--;
-  }
+@mixin light($prefix: '') {
 
   @include input-light($prefix);
 
@@ -74,12 +68,4 @@ $theme-name: light;
   --#{$prefix}ext-color-22: 255, 252, 170; // FFFCAA
 
   --#{$prefix}test-color: 255, 0, 0;
-}
-
-[theme=#{$theme-name}] {
-  @include theme();
-}
-
-:root {
-  @include theme(true);
 }

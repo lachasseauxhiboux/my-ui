@@ -1,0 +1,15 @@
+@import "light";
+@import "input/light";
+
+@import "dark";
+
+@mixin theme($theme: '') {
+  @if $theme == light-- {
+    @include light('');
+    @include light($theme);
+  }
+  @else if $theme == dark-- {
+    @include dark('');
+    @include dark($theme);
+  }
+}
