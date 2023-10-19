@@ -1,0 +1,95 @@
+@import "../get-color";
+@import "./scrollbar-margin";
+
+@mixin dropdown-container() {
+  $max_height_s: 156px;
+  $max_height_m: 234px;
+  $max_height_l: 312px;
+
+  width: 100%;
+  border-radius: 24px;
+  background-color: get-color(dropdown-bg);
+  border: solid 1px get-color(dropdown-border);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .24);
+  display: block;
+  overflow: auto;
+  @include scrollbar-margin(8px);
+
+  &[my-size=s] {
+    max-height: $max_height_s;
+    border-radius: 18px;
+    @include scrollbar-margin(6px);
+  }
+
+  &[my-size=m] {
+    max-height: $max_height_m;
+    border-radius: 18px;
+  }
+
+  &[my-size=l] {
+    max-height: $max_height_l;
+    border-radius: 24px;
+  }
+}
+
+@mixin dropdown-item() {
+  $height_s: 24px;
+  $height_m: 36px;
+  $height_l: 48px;
+
+  display: block;
+  color: inherit;
+  background-color: get-color(dropdown-bg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  cursor: pointer;
+  border-bottom: 1px solid get-color(dropdown-item-border);
+
+  &:hover {
+    outline: none;
+    background-color: get-color(dropdown-item-hover-bg);
+  }
+
+  &.active {
+    background-color: get-color(dropdown-item-selected-bg);
+  }
+
+  &.selected {
+    background-color: get-color(dropdown-item-selected-bg)
+  }
+
+  &.disabled {
+    color: get-color(font-disabled-color);
+    cursor: auto;
+
+    &:hover, &:focus {
+      outline: none;
+      background-color: inherit;
+    }
+  }
+
+  &.no-border {
+    border: none;
+  }
+
+  &[my-size=s] {
+    height: $height_s;
+    padding: 3px 20px;
+    font-size: 12px;
+  }
+
+  &[my-size=m] {
+    height: $height_m;
+    padding: 9px 16px;
+    font-size: 14px;
+  }
+
+  &[my-size=l] {
+    height: $height_l;
+    padding: 12px 12px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}

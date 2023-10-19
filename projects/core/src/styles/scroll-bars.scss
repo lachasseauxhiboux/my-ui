@@ -1,0 +1,27 @@
+@import "./get-color";
+
+$scroll_bar_size: 6px;
+
+* {
+  $track-color: get-color(scroll-bar-bg);
+  $bg-color: get-color(scroll-bar-thumb);
+
+  &::-webkit-scrollbar {
+    width: $scroll_bar_size;
+    height: $scroll_bar_size;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track-color;
+    -webkit-border-radius: 24px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $bg-color;
+    border-radius: 4px;
+    -webkit-border-radius: 24px;
+  }
+
+  scrollbar-color: $track-color;
+  scrollbar-width: thin;
+}

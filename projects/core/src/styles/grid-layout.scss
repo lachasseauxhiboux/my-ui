@@ -1,0 +1,46 @@
+@import "./variables";
+@import "./mixins";
+
+.grid-layout {
+  display: grid;
+  grid-template-rows: 60px 1fr auto;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "sidebar-left main-content sidebar-right"
+    "footer footer footer";
+  height: 100vh
+}
+
+.grid-header {
+  grid-area: header;
+}
+
+.grid-sidebar-left {
+  grid-area: sidebar-left;
+}
+
+.grid-main-content {
+  grid-area: main-content;
+}
+
+.grid-sidebar-right {
+  grid-area: sidebar-right;
+}
+
+.grid-footer {
+  grid-area: footer;
+}
+
+@media (max-width: 768px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main-content"
+      "sidebar-left"
+      "sidebar-right"
+      "footer";
+  }
+}
+

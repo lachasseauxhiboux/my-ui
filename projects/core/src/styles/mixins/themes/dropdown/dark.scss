@@ -1,0 +1,8 @@
+@mixin dropdown-dark($theme: '') {
+  --#{$theme}dropdown-border: var(--dark--neutral-color-5);
+  --#{$theme}dropdown-item-border: var(--dark--neutral-color-5);
+  --#{$theme}dropdown-bg: var(--dark--neutral-color-3);
+  --#{$theme}dropdown-item-hover-bg: var(--dark--neutral-color-4);
+  --#{$theme}dropdown-item-selected-bg: var(--dark--neutral-color-5);
+  --#{$theme}dropdown-item-focused-bg: var(--dark--neutral-color-4);
+}

@@ -1,55 +1,14 @@
 @import "get-color";
-
-app-root {
-  display: flex;
-
-  .main-pane {
-    padding-bottom: 16px;
-    padding-right: 16px;
-    overflow: auto;
-    max-height: 100%;
-  }
-
-  .list-pane {
-    margin-right: 16px;
-    overflow: auto;
-    max-height: 100%;
-  }
-
-  .section {
-    display: flex;
-
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-
-    justify-content: flex-start;
-    align-items: center;
-
-    $height: 60px;
-    min-height: $height;
-    height: $height;
-    max-height: $height;
-
-    padding-left: 16px;
-    padding-right: 16px;
-
-    border-left: 4px solid transparent;
-
-    &.active {
-      border-color: get-color(primary-color);
-    }
-  }
-}
+$header-height: 60px;
 
 [theme="dark"] {
-  app-root {
+  .grid-layout {
     background-color: #0e1824;
   }
 }
 
 [theme="light"] {
-  app-root {
+  .grid-layout {
     background-color: #fff;
   }
 }

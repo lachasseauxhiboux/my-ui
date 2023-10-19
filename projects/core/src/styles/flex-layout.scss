@@ -1,0 +1,28 @@
+.flex-layout {
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+}
+
+.flex-layout-column, .flex-layout-column-reverse {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+.flex-layout-row, .flex-layout-row-reverse {
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+  min-height: 0;
+}
+
+.flex-layout-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-layout-row-reverse {
+  flex-direction: row-reverse;
+}
+
