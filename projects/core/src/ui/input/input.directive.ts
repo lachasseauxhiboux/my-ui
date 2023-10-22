@@ -7,7 +7,7 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { Size } from '../../models/size-type';
+import { Size } from '../../models/size.type';
 
 @Directive({
   selector: 'input[myInput], textarea[myInput]',
