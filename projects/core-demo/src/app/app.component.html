@@ -4,7 +4,14 @@
   </header>
 
   <aside class="grid-sidebar-left flex-layout-column">
-    <!-- Left Sidebar Content -->
+      <a
+        *ngFor="let section of SECTIONS"
+        class="section"
+        [class.active]="isSectionActive(section)"
+        (click)="setActiveSection(section)"
+      >
+        {{section.title}}
+      </a>
   </aside>
 
   <main class="grid-main-content flex-layout-column">

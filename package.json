@@ -13,6 +13,7 @@
     "watch": "ng build my-core --watch --configuration development",
     "core-demo": "ng serve core-demo",
     "core-demo:build": "ng build core-demo",
+    "core-sandbox": "ng serve core-sandbox",
     "test": "jest --no-cache --config jest.config.js",
     "lint": "ng lint"
   },

@@ -7,7 +7,7 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { Size } from '../../models/size.type';
+import { MySize } from '../../models/size.type';
 
 @Directive({
   selector: 'input[myInput], textarea[myInput]',
@@ -18,7 +18,7 @@ export class InputDirective implements OnInit, OnDestroy {
 
   @Input()
   @HostBinding('attr.my-size')
-  size: Size = 'm';
+  size: MySize = 'm';
 
   /** Forces a single space to set appropriate placeholder-shown styles */
   @Input()

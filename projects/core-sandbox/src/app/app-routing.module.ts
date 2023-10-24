@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FirstComponent } from './first/first.component';
+import { SecondComponent } from './second/second.component';
 
 const routes: Routes = [
   {
-    path: 'input',
-    loadChildren: () => import('./stories/input/input-demo.module').then(m => m.InputDemoModule),
+    path:'first',
+    component:FirstComponent
   },
   {
-    path: 'buttons',
-    loadChildren: () => import('./stories/buttons/buttons-demo.module').then(m => m.ButtonsDemoModule),
-  },
-
-];
+    path:'second',
+    component:SecondComponent
+  }
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

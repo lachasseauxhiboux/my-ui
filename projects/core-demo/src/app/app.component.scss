@@ -1,6 +1,32 @@
 @import "get-color";
 $header-height: 60px;
 
+
+.section {
+  display: flex;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  justify-content: flex-start;
+  align-items: center;
+
+  $height: 60px;
+  min-height: $height;
+  height: $height;
+  max-height: $height;
+
+  padding-left: 16px;
+  padding-right: 16px;
+
+  border-left: 4px solid transparent;
+
+  &.active {
+    border-color: get-color(primary-color);
+  }
+}
+
 [theme="dark"] {
   .grid-layout {
     background-color: #0e1824;

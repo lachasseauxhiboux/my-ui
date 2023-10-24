@@ -1,1 +1,1 @@
-export type Size = 's' | 'm' | 'l' | 'xl' | 'user-defined';
+export type MySize = 's' | 'm' | 'l' | 'xl' | 'user-defined';

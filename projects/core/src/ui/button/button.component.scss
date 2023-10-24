@@ -1,0 +1,22 @@
+@mixin clear-button() {
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+$size_s: 24px;
+$size_m: 36px;
+$size_l: 48px;
+$size_xl: 64px;
+
+$transitionTime: .2s;
+
+.my-button {
+  @include clear-button;
+  display: flex;
+  position: relative;
+  border: 1px solid;
+  cursor: pointer;
+  transition: background-color $transitionTime ease-in;
+}
