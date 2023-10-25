@@ -1,7 +1,17 @@
-import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, Input, ViewChild, ViewEncapsulation } from "@angular/core";
-import { FocusMonitor } from "@angular/cdk/a11y";
+import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, Input, Renderer2, ViewChild, ViewEncapsulation } from "@angular/core";
 import { ButtonAlign } from "./button.types";
+import { ButtonTypeDecorator } from "../decorators/button-type.decorator";
+import { ColorDecorator } from "../decorators/color.decorator";
+import { FocusMonitorDecorator } from "../decorators/focus-monitor.decorator";
+import { SizeDecorator } from "../decorators/size.decorator";
+import { ButtonBaseDecorator } from "../decorators/button-base.decorator";
+import { FocusMonitor } from "@angular/cdk/a11y";
 
+@ButtonBaseDecorator()
+@ButtonTypeDecorator()
+@ColorDecorator()
+@FocusMonitorDecorator()
+@SizeDecorator()
 @Component({
   selector: 'button[my-button]',
   templateUrl: './button.component.html',
@@ -22,10 +32,17 @@ export class ButtonComponent {
   @ViewChild('text', {static: false}) text?: ElementRef<HTMLSpanElement>;
 
   constructor(
-    elementRef: ElementRef,
-    focusMonitor: FocusMonitor
+    public focusMonitor: FocusMonitor,
+    public elementRef: ElementRef,
+    public renderer: Renderer2
   ) {
-    super(elementRef, focusMonitor);
+    this.focusMonitor = focusMonitor;
+    this.elementRef = elementRef;
+    this.renderer = renderer;
+  }
+
+  hasAttribute(attribute: string): boolean {
+    return this.elementRef.nativeElement.hasAttribute(attribute);
   }
 }
 

@@ -1,3 +1,6 @@
+@import "../../styles/get-color";
+@import "../../styles/mixins/svg-fill";
+
 @mixin clear-button() {
   appearance: none;
   font-size: inherit;
@@ -19,4 +22,29 @@ $transitionTime: .2s;
   border: 1px solid;
   cursor: pointer;
   transition: background-color $transitionTime ease-in;
+
+  .my-button_text {
+    white-space: nowrap;
+  }
+}
+
+.my-button, .my-action-button {
+  justify-content: center;
+  align-items: center;
+
+  .my-button_icon svg-icon {
+    display: flex;
+  }
+
+  &[my-color=primary].my-button_icon svg-icon {
+    @include svg-fill(get-color(font-main-color));
+  }
+
+  &[my-size=s] {
+    min-width: 64px;
+    height: $size_s;
+    border-radius: 12px;
+    // adds 1px extra offset
+    padding: 0 12px 1px 12px;
+  }
 }

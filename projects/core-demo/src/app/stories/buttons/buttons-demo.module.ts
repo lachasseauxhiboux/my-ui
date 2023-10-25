@@ -4,6 +4,7 @@ import { ButtonsDemoComponent } from "./buttons-demo/buttons-demo.component";
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { SvgIconModule } from "@core";
+import { ButtonModule } from "@core/ui/button";
 
 const routes = [{path: '', component: ButtonsDemoComponent}];
 
@@ -19,7 +20,7 @@ export class ButtonsDemoRoutingModule {}
   ],
   imports: [
     CommonModule,
-    // ButtonModule,
+    ButtonModule,
     HttpClientModule,
     SvgIconModule.forRoot(),
 
