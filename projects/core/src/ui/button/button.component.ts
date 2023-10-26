@@ -40,9 +40,5 @@ export class ButtonComponent {
     this.elementRef = elementRef;
     this.renderer = renderer;
   }
-
-  hasAttribute(attribute: string): boolean {
-    return this.elementRef.nativeElement.hasAttribute(attribute);
-  }
 }
 

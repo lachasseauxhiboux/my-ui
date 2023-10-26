@@ -1,16 +1,20 @@
 @import "./get-color";
 
-
 $colors-list:
   primary-color
-  primary-disabled-color
   primary-hover-color
   primary-click-color
+  primary-disabled-color
+
+  secondary-color
+  secondary-hover-color
+  secondary-click-color
+  secondary-disabled-color
 
   btn-color
+  btn-disabled-color
   btn-hover-color
   btn-click-color
-  btn-disabled-color
 
   neutral-color-1
   neutral-color-2
@@ -46,12 +50,12 @@ $colors-list:
   // font colors
   font-main-color
   font-gray-1-color
+  font-gray-2-color
   font-brand-color
   font-link-color
   font-success-color
   font-warning-color
   font-error-color
-  font-gray-2-color
   font-disabled-color;
 
 $themes: light dark;

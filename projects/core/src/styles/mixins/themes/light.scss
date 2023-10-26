@@ -1,15 +1,24 @@
+@import "button/light";
+@import "interactive-elements/light";
 @import "font-colors/light";
 @import "input/light";
 
 @mixin light($prefix: '') {
 
-  @include font-colors-dark($prefix);
+  @include button-light($prefix);
+  @include font-colors-light($prefix);
   @include input-light($prefix);
+  @include interactive-elements-light($prefix);
 
-  --#{$prefix}primary-color: 69, 162, 147; // #45A293
-  --#{$prefix}primary-hover-color: 62, 146 ,132; // #3E9284
-  --#{$prefix}primary-click-color: 48, 113, 103; // #307167
-  --#{$prefix}primary-disabled-color: 187, 205, 223; // #BBCDDF
+  --#{$prefix}primary-color: 23, 155, 229; // #179BE5
+  --#{$prefix}primary-hover-color: 21, 140, 206; // #3E9284
+  --#{$prefix}primary-click-color: 16, 109, 160; // #106DA0
+  --#{$prefix}primary-disabled-color: 62, 194, 255; // #3EC2FF
+
+  --#{$prefix}secondary-color: 26, 232, 100; // #1AE864
+  --#{$prefix}secondary-hover-color: 49, 234, 115; // #31EA73
+  --#{$prefix}secondary-click-color: 95, 239, 146; // #5FEF92
+  --#{$prefix}secondary-disabled-color: 0, 193, 61; // #00C13D
 
   --#{$prefix}btn-color: 166, 195, 221; // #A6C3DD
   --#{$prefix}btn-hover-color: 152, 179, 202; // #98B3CA

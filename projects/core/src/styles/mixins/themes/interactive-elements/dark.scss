@@ -1,0 +1,22 @@
+@mixin interactive-elements-dark($theme: '') {
+  /* Defaults */
+  --#{$theme}interactive-main-primary: var(--dark--primary-color);
+  --#{$theme}interactive-main-secondary: var(--dark--secondary-color);
+  --#{$theme}interactive-main-border: var(--dark--white-100);
+  --#{$theme}interactive-main-border-transparency: .1;
+  --#{$theme}interactive-bg: var(--dark--neutral-color-1);
+  --#{$theme}interactive-border: var(--dark--btn-color);
+  /* Hovered */
+  --#{$theme}interactive-hover-main: var(--dark--primary-hover-color);
+  --#{$theme}interactive-hover-border: var(--dark--btn-hover-color);
+  /* Keyboard focused */
+  --#{$theme}interactive-kb-focused-border: var(--dark--link-color);
+  --#{$theme}interactive-kb-focused-border-transparency: .60;
+  /* Pressed */
+  --#{$theme}interactive-click-main: var(--dark--primary-click-color);
+  --#{$theme}interactive-click-border: var(--dark--btn-click-color);
+  /* Disabled */
+  --#{$theme}interactive-disabled-main: var(--dark--neutral-color-4);
+  --#{$theme}interactive-disabled-bg: var(--dark--neutral-color-2);
+  --#{$theme}interactive-disabled-border: var(--dark--neutral-color-5);
+}

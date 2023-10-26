@@ -1,0 +1,81 @@
+@import "../../../styles/get-color";
+@import "../../../styles/mixins/svg-fill";
+
+.my-icon-button {
+  background-color: transparent;
+  border: none;
+  align-items: center;
+
+  svg-icon {
+    display: flex;
+  }
+
+  &.use-bg {
+    background-color: get-color(icon-button_bg);
+
+    &.pressed {
+      background-color: get-color(icon-button-active_bg);
+    }
+
+    &:hover, &.hover {
+      background-color: get-color(icon-button-hover_bg);
+
+      &.pressed {
+        background-color: get-color(icon-button-active-hover_bg);
+      }
+    }
+  }
+
+  &:not([color='user-defined']) {
+    &[disabled] {
+      svg-icon {
+        @include svg-fill(get-color(icon-button-disabled));
+      }
+
+      &.pressed {
+        svg-icon {
+          @include svg-fill(get-color(icon-button-pressed-disabled));
+        }
+      }
+    }
+
+    &:not([disabled]) {
+      svg-icon {
+        @include svg-fill(get-color(icon-button));
+      }
+
+      &.pressed {
+        svg-icon {
+          @include svg-fill(get-color(icon-button-pressed));
+        }
+      }
+
+      &:not(:active) {
+        &:hover, &.hover {
+          svg-icon {
+            @include svg-fill(get-color(icon-button-hover));
+          }
+
+          &.pressed {
+            svg-icon {
+              @include svg-fill(get-color(icon-button-pressed-hover));
+            }
+          }
+        }
+      }
+    }
+
+    &:active {
+      svg-icon {
+        @include svg-fill(get-color(icon-button-click));
+      }
+
+      &.pressed {
+        svg-icon {
+          @include svg-fill(get-color(icon-button-pressed-click));
+        }
+      }
+    }
+  }
+}
+

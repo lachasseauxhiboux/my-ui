@@ -1,0 +1,177 @@
+@import "../../../styles/get-color";
+@import "../../../styles/mixins/svg-fill";
+
+@mixin clear-button() {
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+$size_s: 24px;
+$size_m: 36px;
+$size_l: 48px;
+$size_xl: 64px;
+
+$transitionTime: .2s;
+
+
+
+.my-action-button {
+
+  .action-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 28px;
+
+    &:before {
+      content: '';
+      top: -8px;
+      position: absolute;
+      margin: 0 8px;
+      width: 1px;
+      height: 16px;
+      background-color: transparent;
+      opacity: .68;
+    }
+
+    &:after {
+      content: '';
+      top: -7px;
+      position: absolute;
+      margin: 0 16px;
+      width: 8px;
+      height: 8px;
+      background-color: transparent;
+      border-left: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      transform: rotate(-45deg);
+      transition: all $transitionTime ease-in;
+    }
+  }
+
+  &:not(.pressed) {
+    .action-icon {
+      &:before {
+        background-color: get-color(font-main-color);
+      }
+
+      &:after {
+        border-left-color: get-color(font-main-color);
+        border-bottom-color: get-color(font-main-color);
+      }
+    }
+  }
+
+  &.pressed {
+    .action-icon {
+      &:before {
+        background-color: get-color(link-color);
+      }
+
+      &:after {
+        border-left-color: get-color(link-color);
+        border-bottom-color: get-color(link-color);
+      }
+    }
+  }
+
+  &[my-color=primary] {
+    &:disabled {
+      .action-icon {
+        &:before {
+          background-color: get-color(font-disabled-color);
+        }
+
+        &:after {
+          border-color: get-color(font-disabled-color);
+        }
+      }
+    }
+
+    &:not([disabled]) {
+      .action-icon {
+        &:before {
+          background-color: get-color(white-100);
+        }
+
+        &:after {
+          border-color: get-color(white-100);
+        }
+      }
+    }
+  }
+
+  &[my-color=secondary] {
+    &:disabled {
+      .action-icon {
+        &:before {
+          background-color: get-color(font-disabled-color);
+        }
+
+        &:after {
+          border-color: get-color(font-disabled-color);
+        }
+      }
+    }
+
+    &:not([disabled]) {
+      .action-icon {
+        &:before {
+          background-color: get-color(button-action-secondary-icon-line);
+        }
+
+        &:after {
+          border-color: get-color(button-action-secondary-icon-arrow);
+        }
+      }
+    }
+  }
+
+  &[my-color=filled] {
+    &:disabled {
+      .action-icon {
+        &:before {
+          background-color: get-color(font-disabled-color);
+        }
+
+        &:after {
+          border-color: get-color(font-disabled-color);
+        }
+      }
+    }
+
+    &.pressed {
+      .action-icon {
+        &:before {
+          background-color: get-color(button-filled-pressed-text);;
+        }
+
+        &:after {
+          border-color: get-color(button-filled-pressed-text);;
+        }
+      }
+    }
+  }
+
+  &[my-size=s] .action-icon {
+    &:before {
+      top: -6px;
+      height: 12px;
+    }
+  }
+
+  &[my-size=l] .action-icon {
+    &:before {
+      top: -8.5px;
+      height: 17px;
+    }
+  }
+
+  &.active .action-icon {
+    &:after {
+      transform: rotate(135deg) translate(4.5px, -5.5px);
+    }
+  }
+}

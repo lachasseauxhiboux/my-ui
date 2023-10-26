@@ -2,7 +2,8 @@ const BUTTON_VARIANTS = [
   'my-button',
   'my-round-button',
   'my-action-button',
-  'my-icon-button'
+  'my-icon-button',
+  'my-link-button'
 ];
 
 export function ButtonBaseDecorator(): ClassDecorator {

@@ -1,15 +1,24 @@
+@import "button/dark";
+@import "interactive-elements/dark";
 @import "font-colors/dark";
 @import "input/dark";
 
 @mixin dark($prefix: '') {
 
+  @include button-dark($prefix);
   @include font-colors-dark($prefix);
   @include input-dark($prefix);
+  @include interactive-elements-dark($prefix);
 
-  --#{$prefix}primary-color: 69, 162, 147; // #45A293
-  --#{$prefix}primary-hover-color: 91, 173, 159; // #5BAD9F
-  --#{$prefix}primary-click-color: 120, 187, 176; // #78BBB0
-  --#{$prefix}primary-disabled-color: 33, 56, 82; // #213852
+  --#{$prefix}primary-color: 23, 155, 229; // #179BE5
+  --#{$prefix}primary-hover-color: 25, 170, 252; // #19AAFС
+  --#{$prefix}primary-click-color: 30, 202, 255; // #1ECAFF
+  --#{$prefix}primary-disabled-color: 35, 233, 255; // #23E9FF
+
+  --#{$prefix}secondary-color: 98, 209, 138; // #62D18A
+  --#{$prefix}secondary-hover-color: 84, 207, 129; // #54CF81
+  --#{$prefix}secondary-click-color: 81, 202, 110; // #51CA6E
+  --#{$prefix}secondary-disabled-color: 79, 198, 91; // #4FC65B
 
   --#{$prefix}btn-color: 55, 94, 138; // #375E8A
   --#{$prefix}btn-hover-color: 85, 118, 156; // #55769C

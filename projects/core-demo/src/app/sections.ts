@@ -4,6 +4,7 @@ export interface Section {
 }
 
 export const sections: Section[] = [
+  {title: 'Action buttons', url: 'action-buttons'},
   {title: 'Buttons', url: 'buttons'},
   {title: 'Input', url: 'input'},
 ];
