@@ -1,11 +1,13 @@
 export function DefaultCssClassDecorator(defaultClass: string): ClassDecorator {
-  return function (target: any) {
-    // Override constructor to add default CSS class
-    const originalConstructor = target.prototype.constructor;
+  return function (constructor: any) {
+    const originalOnInit = constructor.prototype.ngOnInit || function () { };
 
-    target.prototype.constructor = function (...args: any[]) {
-      originalConstructor.apply(this, args);
-      this.elementRef.nativeElement.classList.add(defaultClass);
+    constructor.prototype.ngOnInit = function () {
+      originalOnInit.call(this);
+      if (this.elementRef && this.elementRef.nativeElement) {
+        this.elementRef.nativeElement.classList.add(defaultClass);
+      }
     };
   };
 }
+

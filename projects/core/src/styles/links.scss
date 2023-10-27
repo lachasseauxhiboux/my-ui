@@ -1,0 +1,139 @@
+@import "./mixins/svg-fill";
+@import "./mixins/kb-focused-border";
+@import "./get-color";
+
+a {
+  outline: none;
+  cursor: pointer;
+  transition: color .2s ease-in;
+
+  svg-icon {
+    display: flex;
+  }
+
+  &:hover {
+    $color: get-color(link-hovered-color);
+    color: $color;
+
+    @include svg-fill($color);
+  }
+
+  &:active {
+    $color: get-color(link-click-color);
+    color: $color;
+
+    @include svg-fill($color);
+
+    transition: none;
+  }
+
+  &.cdk-keyboard-focused {
+    $color: get-color(link-hovered-color);
+    color: $color;
+    @include kb-focused-border;
+
+    @include svg-fill($color);
+  }
+
+  &.red {
+    $color: get-color(error-color);
+    color: $color;
+
+    @include svg-fill($color);
+
+    &:hover {
+      $color: get-color(red-link-hovered-color);
+      color: $color;
+      @include svg-fill($color);
+    }
+
+    &:active {
+      $color: get-color(red-link-click-color);
+      color: $color;
+      @include svg-fill($color);
+    }
+  }
+
+  &.green {
+    $color: get-color(primary-color);
+    color: $color;
+
+    @include svg-fill($color);
+
+    &:hover {
+      $color: get-color(primary-hover-color);
+      color: $color;
+      @include svg-fill($color);
+    }
+
+    &:active {
+      $color: get-color(primary-click-color);
+      color: $color;
+      @include svg-fill($color);
+    }
+  }
+
+  &.pseudo-link {
+    $color: get-color(link-color);
+    color: $color;
+
+    @include svg-fill($color);
+
+    my-cancelable-progress {
+      circle {
+        fill: none;
+      }
+    }
+
+    my-cancelable-progress .container {
+      background-color: transparent;
+
+      circle {
+        stroke: $color;
+      }
+    }
+
+    my-cancelable-progress .container .cross-container path {
+      stroke: $color;
+    }
+
+    &:hover {
+      $color: rgba(get-color-rgb-by-theme(dark, link-color), .75);
+      color: $color;
+      @include svg-fill($color);
+
+      my-cancelable-progress {
+        circle {
+          fill: none;
+        }
+      }
+
+      my-cancelable-progress .container circle {
+        stroke: $color;
+      }
+
+      my-cancelable-progress .container .cross-container path {
+        stroke: $color;
+      }
+    }
+  }
+
+  &.disabled {
+    $color: get-color(font-disabled-color);
+    color: $color;
+    cursor: not-allowed;
+
+    svg-icon {
+      @include svg-fill($color);
+    }
+
+    &:hover {
+      color: $color;
+      cursor: not-allowed;
+
+      svg-icon {
+        @include svg-fill($color);
+      }
+    }
+  }
+}

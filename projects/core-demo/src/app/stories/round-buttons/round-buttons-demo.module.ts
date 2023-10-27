@@ -1,22 +1,22 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { ButtonsDemoComponent } from "./buttons-demo/buttons-demo.component";
 import { CommonModule } from "@angular/common";
+import { ButtonModule } from "@core/ui/button";
 import { HttpClientModule } from "@angular/common/http";
 import { SvgIconModule } from "@core";
-import { ButtonModule } from "@core/ui/button";
+import { ActionButtonsDemoComponent } from "../action-buttons/action-buttons-demo/action-buttons-demo.component";
 
-const routes = [{path: '', component: ButtonsDemoComponent}];
+const routes = [{path: '', component: ActionButtonsDemoComponent}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ButtonsDemoRoutingModule {}
+export class ActionButtonsDemoRoutingModule {}
 
 @NgModule({
   declarations: [
-    ButtonsDemoComponent
+    ActionButtonsDemoComponent
   ],
   imports: [
     CommonModule,
@@ -24,8 +24,8 @@ export class ButtonsDemoRoutingModule {}
     HttpClientModule,
     SvgIconModule.forRoot(),
 
-    ButtonsDemoRoutingModule
+    ActionButtonsDemoRoutingModule
   ],
   exports: []
 })
-export class ButtonsDemoModule {}
+export class ActionButtonsDemoModule {}

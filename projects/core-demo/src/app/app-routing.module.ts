@@ -7,8 +7,16 @@ const routes: Routes = [
     loadChildren: () => import('./stories/action-buttons/action-buttons-demo.module').then(m => m.ActionButtonsDemoModule),
   },
   {
-    path: 'buttons',
-    loadChildren: () => import('./stories/buttons/buttons-demo.module').then(m => m.ButtonsDemoModule),
+    path: 'icon-buttons',
+    loadChildren: () => import('./stories/icon-buttons/icon-buttons-demo.module').then(m => m.IconButtonsDemoModule),
+  },
+  {
+    path: 'link-buttons',
+    loadChildren: () => import('./stories/link-buttons/link-buttons-demo.module').then(m => m.LinkButtonsDemoModule),
+  },
+  {
+    path: 'standard-buttons',
+    loadChildren: () => import('./stories/standard-buttons/standard-buttons-demo.module').then(m => m.StandardButtonsDemoModule),
   },
   {
     path: 'input',
