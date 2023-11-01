@@ -1,13 +1,14 @@
 import { FocusMonitor } from "@angular/cdk/a11y";
 import { ChangeDetectionStrategy, Component, ElementRef, Renderer2, ViewEncapsulation } from "@angular/core";
-import { ButtonBaseDecorator, ColorDecorator, FocusMonitorDecorator, SizeDecorator } from "@core/ui/decorators";
+import { ButtonBaseDecorator, ButtonTypeDecorator, ColorDecorator, FocusMonitorDecorator, SizeDecorator } from "@core/ui/decorators";
 
 @ButtonBaseDecorator()
+@ButtonTypeDecorator()
 @ColorDecorator()
 @FocusMonitorDecorator()
 @SizeDecorator()
 @Component({
-  selector: 'button[my-round-button], button[my-icon-button]',
+  selector: 'button[my-icon-button]',
   template: `
     <span class="my-button_icon">
       <ng-content></ng-content>

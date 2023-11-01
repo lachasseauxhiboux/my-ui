@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, HostListener, ViewEncapsulation } from "@angular/core";
+import { StandardButtonComponent } from "../standard-button/standard-button.component";
 
-import { ButtonComponent } from "../button.component";
 
 @Component({
   selector: 'button[my-action-button]',
@@ -9,7 +9,7 @@ import { ButtonComponent } from "../button.component";
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None
 })
-export class ActionButtonComponent extends ButtonComponent {
+export class ActionButtonComponent extends StandardButtonComponent {
 
   isToggled = false;
 

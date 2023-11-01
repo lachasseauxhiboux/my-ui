@@ -1,7 +1,17 @@
 @import "../../../styles/get-color";
 @import "../../../styles/mixins/svg-fill";
+@import "../button.mixins";
+
+$size_s: 24px;
+$size_m: 36px;
+$size_l: 48px;
+$size_xl: 64px;
+
+$transitionTime: .2s;
 
 .my-icon-button {
+  @include clear-button;
+  @include button-base;
   background-color: transparent;
   border: none;
   align-items: center;

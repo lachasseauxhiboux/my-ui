@@ -1,0 +1,16 @@
+<label>
+  <input
+    type="checkbox"
+    [class.animate]="animate"
+    [attr.name]="name"
+    [id]="inputId"
+    [disabled]="disabled"
+    [checked]="checked"
+    [indeterminate]="indeterminate"
+    (change)="onCheckedChange($event)"
+  >
+  <div class="my-checkbox_frame" [class.indeterminate]="indeterminate"></div>
+  <div #ref [hidden]="ref.childNodes.length === 0" class="my-checkbox_content my-text_body-2">
+    <ng-content></ng-content>
+  </div>
+</label>

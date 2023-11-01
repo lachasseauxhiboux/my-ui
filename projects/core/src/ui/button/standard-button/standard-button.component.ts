@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, Input, Renderer2, ViewChild, ViewEncapsulation } from "@angular/core";
-import { ButtonAlign } from "./button.types";
-import { ButtonTypeDecorator } from "../decorators/button-type.decorator";
-import { ColorDecorator } from "../decorators/color.decorator";
-import { FocusMonitorDecorator } from "../decorators/focus-monitor.decorator";
-import { SizeDecorator } from "../decorators/size.decorator";
-import { ButtonBaseDecorator } from "../decorators/button-base.decorator";
+import { ButtonAlign } from "../button.types";
+import { ButtonTypeDecorator } from "../../decorators/button-type.decorator";
+import { ColorDecorator } from "../../decorators/color.decorator";
+import { FocusMonitorDecorator } from "../../decorators/focus-monitor.decorator";
+import { SizeDecorator } from "../../decorators/size.decorator";
+import { ButtonBaseDecorator } from "../../decorators/button-base.decorator";
 import { FocusMonitor } from "@angular/cdk/a11y";
 
 @ButtonBaseDecorator()
@@ -14,13 +14,13 @@ import { FocusMonitor } from "@angular/cdk/a11y";
 @SizeDecorator()
 @Component({
   selector: 'button[my-button]',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss'],
+  templateUrl: './standard-button.component.html',
+  styleUrls: ['./standard-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   inputs: ['size', 'color']
 })
-export class ButtonComponent {
+export class StandardButtonComponent {
   @Input()
   @HostBinding('attr.my-align')
   align: ButtonAlign = 'center';

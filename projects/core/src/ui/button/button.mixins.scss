@@ -1,0 +1,169 @@
+@import "../../styles/get-color";
+@import "../../styles/mixins/svg-fill";
+
+@mixin clear-button() {
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+@mixin button-base() {
+  display: flex;
+  position: relative;
+  border: 1px solid;
+  cursor: pointer;
+  transition: background-color $transitionTime ease-in;
+}
+
+@mixin not-disabled() {
+  &[my-color=primary] {
+    background-color: get-color(interactive-main-primary);
+    border-color: get-color(interactive-main-border, interactive-main-border-transparency);
+
+    .my-button_icon svg-icon {
+      @include svg-fill(get-color(white-100));
+    }
+  }
+
+  &[my-color=secondary] {
+    background-color: get-color(interactive-main-secondary);
+
+  }
+
+  &[my-color=transparent] {
+    background-color: transparent;
+    border-color: get-color(interactive-transparent-border);
+    transition: border-color $transitionTime ease-in;
+
+    .my-button_icon svg-icon {
+      @include svg-fill(get-color(font-gray-1-color));
+    }
+  }
+
+  &:not(:active) {
+    &:hover, &.hover {
+      &[my-color=primary] {
+        background-color: get-color(interactive-hover-main);
+      }
+    }
+  }
+}
+
+@mixin disabled() {
+  cursor: not-allowed;
+
+  &[my-color=primary] {
+    background-color: get-color(btn-disabled-color);
+    border-color: get-color(interactive-main-border, interactive-main-border-transparency);
+    .my-button_icon svg-icon {
+      @include svg-fill(get-color(font-disabled-color));
+    }
+  }
+
+  &[my-color=transparent] {
+    background-color: transparent;
+    border-color: get-color(interactive-main-border, interactive-main-border-transparency);
+
+    .my-button_icon svg-icon {
+      display: flex;
+      @include svg-fill(get-color(font-disabled-color));
+    }
+  }
+}
+
+@mixin standart-action() {
+  justify-content: center;
+  align-items: center;
+
+  .my-button_icon svg-icon {
+    display: flex;
+  }
+
+  &[my-color=primary].my-button_icon svg-icon {
+    @include svg-fill(get-color(font-main-color));
+  }
+
+  &[my-button-type=icon-with-text][my-align=left] {
+    justify-content: flex-start;
+  }
+
+  .my-button_text {
+    color: get-color(white-100);
+  }
+
+  &[my-color=secondary] .my-button_text {
+    color: get-color(primary-color);
+  }
+
+  &[my-color=secondary]:disabled .my-button_text {
+    color: get-color(font-disabled-color);
+  }
+
+  &[my-size=s] {
+    min-width: 64px;
+    height: $size_s;
+    border-radius: 12px;
+    // adds 1px extra offset
+    padding: 0 12px 1px 12px;
+
+    &[my-button-type=icon-with-text] {
+      min-width: 80px;
+      // adds 1px extra offset
+      padding: 0 12px 1px 8px;
+
+      .my-button_icon:not(:empty) + .my-button_text {
+        margin-left: 4px;
+      }
+    }
+
+    .my-button_text {
+      font-size: 12px;
+      line-height: 1.33;
+    }
+  }
+  &[my-size=m] {
+    min-width: 80px;
+    height: $size_m;
+    border-radius: 18px;
+    // adds 1px extra offset
+    padding: 0 16px 1px 16px;
+
+    &[my-button-type=icon-with-text] {
+      min-width: 104px;
+      // adds 1px extra offset
+      padding: 0 20px 1px 16px;
+
+      .my-button_icon:not(:empty) + .my-button_text {
+        margin-left: 10px;
+      }
+    }
+
+    .my-button_text {
+      font-size: 14px;
+      line-height: 1.43;
+    }
+  }
+  &[my-size=l], &[my-size=xl] {
+    min-width: 96px;
+    height: $size_l;
+    border-radius: 24px;
+    // adds 1px extra offset
+    padding: 0 20px 1px 20px;
+
+    &[my-button-type=icon-with-text] {
+      min-width: 120px;
+      // adds 1px extra offset
+      padding: 0 20px 1px 16px;
+
+      .my-button_icon:not(:empty) + .my-button_text {
+        margin-left: 12px;
+      }
+    }
+
+    .my-button_text {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+}

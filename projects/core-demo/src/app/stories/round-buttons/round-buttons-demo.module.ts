@@ -4,19 +4,19 @@ import { CommonModule } from "@angular/common";
 import { ButtonModule } from "@core/ui/button";
 import { HttpClientModule } from "@angular/common/http";
 import { SvgIconModule } from "@core";
-import { ActionButtonsDemoComponent } from "../action-buttons/action-buttons-demo/action-buttons-demo.component";
+import { RoundButtonsDemoComponent } from "./round-buttons-demo/round-buttons-demo.component";
 
-const routes = [{path: '', component: ActionButtonsDemoComponent}];
+const routes = [{path: '', component: RoundButtonsDemoComponent}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ActionButtonsDemoRoutingModule {}
+export class RoundButtonsDemoRoutingModule {}
 
 @NgModule({
   declarations: [
-    ActionButtonsDemoComponent
+    RoundButtonsDemoComponent
   ],
   imports: [
     CommonModule,
@@ -24,8 +24,8 @@ export class ActionButtonsDemoRoutingModule {}
     HttpClientModule,
     SvgIconModule.forRoot(),
 
-    ActionButtonsDemoRoutingModule
+    RoundButtonsDemoRoutingModule
   ],
   exports: []
 })
-export class ActionButtonsDemoModule {}
+export class RoundButtonsDemoModule {}

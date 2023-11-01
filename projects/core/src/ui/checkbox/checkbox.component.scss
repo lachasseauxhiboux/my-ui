@@ -1,0 +1,51 @@
+@import "../../styles/get-color";
+@import "../../styles/mixins/kb-focused-border";
+@import "../../styles/mixins/visually-hidden";
+
+$size: 16px;
+$transition-duration: .2s;
+
+@mixin check-animation-end($color) {
+  width: 4px;
+  height: 8px;
+  transform: rotate(45deg) translate(-1px, -3px);
+  border-color: $color;
+}
+
+@mixin check($animate) {
+  content: "";
+  position: absolute;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  transform: rotate(45deg) translate(5px, 0);
+  transform-origin: 0 100%;
+  @if $animate {
+    animation: check-animation $transition-duration .1s ease-in forwards;
+  } @else {
+    @include check-animation-end(get-color(white-100));
+  }
+}
+
+@mixin check-indeterminate {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 0;
+  border-bottom: 2px solid transparent;
+  transform: translate(-50%, 0);
+  transform-origin: 0 100%;
+  left: 50%;
+  top: calc(50% - 1px);
+  animation: check-indeterminate-animation $transition-duration .1s ease-in forwards;
+}
+
+@mixin checked-frame($animate) {
+  background-color: get-color(checkbox-checked-bg);
+  opacity: 1;
+  border-color: get-color(checkbox-checked-border, checkbox-checked-border-transparency);
+  @if $animate {
+    transition: all $transition-duration ease-in;
+    transition-property: background-color, border-color;
+  }
+}
+

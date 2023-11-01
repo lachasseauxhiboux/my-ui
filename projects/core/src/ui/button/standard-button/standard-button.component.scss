@@ -1,0 +1,35 @@
+@import "../../../styles/get-color";
+@import "../../../styles/mixins/svg-fill";
+@import "../../../styles/mixins/kb-focused-border";
+@import "../button.mixins";
+
+$size_s: 24px;
+$size_m: 36px;
+$size_l: 48px;
+$size_xl: 64px;
+
+$transitionTime: .2s;
+
+.my-button {
+  @include clear-button;
+  @include button-base;
+
+  @include standart-action;
+  .my-button_text {
+    white-space: nowrap;
+  }
+
+  &:not(:disabled) {
+    @include not-disabled;
+  }
+
+  &:disabled {
+    @include disabled;
+    &[my-color=primary] {
+      .my-button_text {
+        color: get-color(font-disabled-color);
+      }
+    }
+  }
+}
+

@@ -1,0 +1,144 @@
+@import "../../../styles/get-color";
+@import "../../../styles/mixins/svg-fill";
+@import "../button.mixins";
+
+$size_s: 24px;
+$size_m: 36px;
+$size_l: 48px;
+$size_xl: 64px;
+
+$transitionTime: .2s;
+
+.my-round-button {
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+  .my-button_icon svg-icon {
+    display: flex;
+  }
+
+  &[my-size=s] {
+    width: $size_s;
+    height: $size_s;
+    min-width: $size_s;
+    min-height: $size_s;
+    max-width: $size_s;
+    max-height: $size_s;
+  }
+  &[my-size=m] {
+    width: $size_m;
+    height: $size_m;
+    min-width: $size_m;
+    min-height: $size_m;
+    max-width: $size_m;
+    max-height: $size_m;
+  }
+  &[my-size=l] {
+    width: $size_l;
+    height: $size_l;
+    min-width: $size_l;
+    min-height: $size_l;
+    max-width: $size_l;
+    max-height: $size_l;
+  }
+  &[my-size=xl] {
+    width: $size_xl;
+    height: $size_xl;
+    min-width: $size_xl;
+    min-height: $size_xl;
+    max-width: $size_xl;
+    max-height: $size_xl;
+  }
+  &[my-color=secondary] {
+    .my-button_icon svg-icon {
+      svg path, svg rect {
+        fill: get-color(button-secondary-plus-icon);
+      }
+    }
+
+    &:disabled {
+      border-color: get-color(button-secondary-disabled-border);
+
+      .my-button_icon svg-icon {
+        svg path, svg rect {
+          fill: get-color(button-secondary-disabled-plus-icon);
+        }
+      }
+    }
+  }
+
+  &.success-button {
+    &:not(:disabled) {
+      border: 1px solid get-color(success-color);
+      background-color: get-color(success-color, transparency-20);
+
+      svg-icon {
+        @include svg-fill(get-color(success-color));
+      }
+
+      &:hover {
+        background-color: get-color(success-color, transparency-60);
+
+        svg-icon {
+          @include svg-fill(get-color(font-main-color));
+        }
+      }
+
+      &:active {
+        border: 1px solid get-color(success-color);
+        background-color: get-color(success-color);
+
+        svg-icon {
+          @include svg-fill(get-color(font-main-color));
+        }
+      }
+    }
+
+    &:disabled {
+      border: 1px solid get-color(font-disabled-color);
+      background-color: get-color(font-disabled-color, transparency-15);
+
+      svg-icon {
+        @include svg-fill(get-color(font-disabled-color));
+      }
+    }
+  }
+
+  &.error-button {
+    &:not(:disabled) {
+      border: 1px solid get-color(error-color);
+      background-color: get-color(error-color, transparency-20);
+
+      svg-icon {
+        @include svg-fill(get-color(error-color));
+      }
+
+      &:hover {
+        background-color: get-color(error-color, transparency-60);
+
+        svg-icon {
+          @include svg-fill(get-color(font-main-color));
+        }
+      }
+
+      &:active {
+        border: 1px solid get-color(error-color);
+        background-color: get-color(error-color);
+
+        svg-icon {
+          @include svg-fill(get-color(font-main-color));
+        }
+      }
+    }
+
+    &:disabled {
+      border: 1px solid get-color(font-disabled-color);
+      background-color: get-color(font-disabled-color, transparency-15);
+
+      svg-icon {
+        @include svg-fill(get-color(font-disabled-color));
+      }
+    }
+  }
+}

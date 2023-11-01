@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('./stories/icon-buttons/icon-buttons-demo.module').then(m => m.IconButtonsDemoModule),
   },
   {
+    path: 'round-buttons',
+    loadChildren: () => import('./stories/round-buttons/round-buttons-demo.module').then(m => m.RoundButtonsDemoModule),
+  },
+  {
     path: 'link-buttons',
     loadChildren: () => import('./stories/link-buttons/link-buttons-demo.module').then(m => m.LinkButtonsDemoModule),
   },
@@ -22,7 +26,10 @@ const routes: Routes = [
     path: 'input',
     loadChildren: () => import('./stories/input/input-demo.module').then(m => m.InputDemoModule),
   },
-
+  {
+    path: 'typography',
+    loadChildren: () => import('./stories/typography/typography-demo.module').then(m => m.TypographyDemoModule),
+  },
 
 ];
 
