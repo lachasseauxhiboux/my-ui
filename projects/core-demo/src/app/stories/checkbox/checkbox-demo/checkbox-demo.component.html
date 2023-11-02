@@ -1,0 +1,39 @@
+<div class="flex-layout">
+  <div style="padding: 20px; display:flex; flex-direction: column; justify-content: space-around; height: 300px; width: 400px">
+    <my-checkbox [(ngModel)]="selected1">
+      {{getTitle(selected1)}}
+    </my-checkbox>
+    <my-checkbox [(ngModel)]="selected2">
+      {{getTitle(selected2)}}
+    </my-checkbox>
+    <my-checkbox [disabled]="true" >
+      disabled unchecked
+    </my-checkbox>
+    <my-checkbox [disabled]="true"  [checked]="true">
+      disabled checked
+    </my-checkbox>
+    <my-checkbox>
+      <div class="ellipsis ">long long long long long long long long long long long long long long long long long long
+        long long lolong long long long long long long long long long long long long long long long long long long long
+        long long long long long long long long long long long long long long long long long long long long long long
+        long long long long long long long long long long long long text
+      </div>
+    </my-checkbox>
+  </div>
+
+  <div style="display:flex; justify-content: space-around; align-items: center; width: 450px; height: 50px">
+    <my-checkbox [(ngModel)]="selected1">
+      {{getTitle(selected1)}}
+    </my-checkbox>
+    <my-checkbox [(ngModel)]="selected2">
+      {{getTitle(selected2)}}
+    </my-checkbox>
+    <my-checkbox [disabled]="true">
+      disabled unchecked
+    </my-checkbox>
+    <my-checkbox [disabled]="true" [checked]="true">
+      disabled checked
+    </my-checkbox>
+
+  </div>
+<

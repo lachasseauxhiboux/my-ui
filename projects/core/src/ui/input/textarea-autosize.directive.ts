@@ -1,15 +1,17 @@
-import {Directive, ElementRef, forwardRef, HostListener, Input} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { Directive, ElementRef, forwardRef, HostListener, Input } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 const TEXTAREA_BORDERS_OFFSET = 2;
 
 @Directive({
- selector: 'textarea[myAutoSize]',
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => TextareaAutosizeDirective),
-    multi: true
-  }]
+  selector: 'textarea[myAutoSize]',
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TextareaAutosizeDirective),
+      multi: true,
+    },
+  ],
 })
 export class TextareaAutosizeDirective implements ControlValueAccessor {
   @Input()

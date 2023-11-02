@@ -1,6 +1,12 @@
-import { FocusMonitor } from "@angular/cdk/a11y";
-import { ChangeDetectionStrategy, Component, ElementRef, Renderer2, ViewEncapsulation } from "@angular/core";
-import { ButtonBaseDecorator, ButtonTypeDecorator, ColorDecorator, FocusMonitorDecorator, SizeDecorator } from "@core/ui/decorators";
+import { FocusMonitor } from '@angular/cdk/a11y';
+import { ChangeDetectionStrategy, Component, ElementRef, Renderer2, ViewEncapsulation } from '@angular/core';
+import {
+  ButtonBaseDecorator,
+  ButtonTypeDecorator,
+  ColorDecorator,
+  FocusMonitorDecorator,
+  SizeDecorator,
+} from '@core/ui/decorators';
 
 @ButtonBaseDecorator()
 @ButtonTypeDecorator()
@@ -17,13 +23,13 @@ import { ButtonBaseDecorator, ButtonTypeDecorator, ColorDecorator, FocusMonitorD
   styleUrls: ['./round-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  inputs: ['size', 'color']
+  inputs: ['size', 'color'],
 })
 export class RoundButtonComponent {
   constructor(
     public focusMonitor: FocusMonitor,
     public elementRef: ElementRef,
-    public renderer: Renderer2
+    public renderer: Renderer2,
   ) {
     this.focusMonitor = focusMonitor;
     this.elementRef = elementRef;

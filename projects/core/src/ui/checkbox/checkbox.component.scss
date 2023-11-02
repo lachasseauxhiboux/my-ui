@@ -49,3 +49,165 @@ $transition-duration: .2s;
   }
 }
 
+.my-checkbox {
+  display: inline-block;
+
+  input {
+    display: none;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .my-checkbox_content {
+    margin: 0 8px;
+    max-width: 100%;
+  }
+
+  .my-checkbox_frame {
+    position: relative;
+    min-width: $size;
+    min-height: $size;
+    background: get-color(checkbox-unchecked-bg);
+    border: 1px solid get-color(checkbox-unchecked-border);
+    border-radius: 4px;
+    transition: all $transition-duration ease-out;
+    transition-property: background-color, border-color;
+    text-align: left;
+  }
+
+  input:checked {
+    & ~ .my-checkbox_frame {
+      @include checked-frame(false);
+
+      &:not(.indeterminate) {
+        &:after {
+          @include check(false);
+        }
+      }
+    }
+
+    &.animate {
+      & ~ .my-checkbox_frame {
+        &:not(.indeterminate) {
+          &:after {
+            @include check(true);
+          }
+        }
+      }
+    }
+  }
+
+  .my-checkbox_frame.indeterminate {
+    @include checked-frame(true);
+
+    &:after {
+      @include check-indeterminate;
+    }
+  }
+
+  .visually-hidden {
+    @include visually-hidden;
+  }
+}
+
+
+/* Hovered */
+
+.my-checkbox:hover {
+  .my-checkbox_frame {
+    border-color: get-color(checkbox-unchecked-border-hover)
+  }
+
+  input:checked ~ .my-checkbox_frame {
+    background-color: get-color(checkbox-checked-bg-hover);
+    border-color: get-color(checkbox-checked-border, checkbox-checked-border-transparency)
+  }
+}
+
+/* Keyboard focused */
+
+.my-checkbox:focus, .my-checkbox:focus-visible {
+  outline: none;
+}
+
+.my-checkbox.cdk-keyboard-focused {
+  .my-checkbox_frame {
+    @include kb-focused-border;
+  }
+
+  input:checked ~ .my-checkbox_frame {
+    background-color: get-color(checkbox-checked-bg-hover);
+    border-color: get-color(checkbox-checked-border, checkbox-checked-border-transparency)
+  }
+}
+
+/* Pressed */
+
+.my-checkbox:active {
+  .my-checkbox_frame {
+    border-color: get-color(checkbox-unchecked-border-click);
+    transition: none;
+  }
+
+  input:checked ~ .my-checkbox_frame {
+    background-color: get-color(checkbox-checked-bg-click);
+  }
+}
+
+/* Disabled */
+
+.my-checkbox.disabled {
+  label {
+    cursor: not-allowed;
+  }
+
+  .my-checkbox_text {
+    color: get-color(font-disabled-color);
+  }
+
+  .my-checkbox_frame {
+    background-color: get-color(checkbox-unchecked-bg-disabled);
+    border-color: get-color(checkbox-unchecked-border-disabled, checkbox-unchecked-border-disabled-transparency);
+  }
+
+  input:checked ~ .my-checkbox_frame {
+    background-color: get-color(checkbox-checked-bg-disabled);
+    border-color: get-color(checkbox-checked-border, checkbox-checked-border-transparency);
+    &:after {
+      animation: none;
+      @include check-animation-end(get-color(font-disabled-color));
+    }
+  }
+}
+
+@keyframes check-animation {
+  0% {
+    width: 0;
+    height: 0;
+    transform: rotate(45deg) translate(5px, 2px);
+    border-color: get-color(white-100);
+  }
+  33% {
+    width: 4px;
+    height: 0;
+    transform: rotate(45deg) translate(5px, 2px);
+  }
+  100% {
+   @include check-animation-end(get-color(white-100));
+  }
+}
+
+@keyframes check-indeterminate-animation {
+  0% {
+    width: 0;
+    border-color: get-color(white-100);
+  }
+  100% {
+    width: 8px;
+    border-color: get-color(white-100);
+  }
+}

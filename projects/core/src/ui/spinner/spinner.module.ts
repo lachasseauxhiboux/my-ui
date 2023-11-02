@@ -5,6 +5,6 @@ import { SpinnerComponent } from './spinner.component';
 @NgModule({
   declarations: [SpinnerComponent],
   imports: [CommonModule],
-  exports: [SpinnerComponent]
+  exports: [SpinnerComponent],
 })
-export class SpinnerModule { }
+export class SpinnerModule {}

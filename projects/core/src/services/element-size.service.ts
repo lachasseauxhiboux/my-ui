@@ -1,6 +1,6 @@
-import {Injectable, NgZone} from '@angular/core';
-import {throttle} from 'lodash-es';
-import {Observable} from 'rxjs';
+import { Injectable, NgZone } from '@angular/core';
+import { throttle } from 'lodash-es';
+import { Observable } from 'rxjs';
 
 export interface ResizeInfo {
   predicateValue: boolean;
@@ -8,7 +8,7 @@ export interface ResizeInfo {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ElementSizeService {
   constructor(private ngZone: NgZone) {}
@@ -19,16 +19,14 @@ export class ElementSizeService {
     predicateTimeoutMs: number,
     // zonejs does not support ResizeObserver API and does not run cd when it fires
     // that's why we run it in separated zone
-    useZone = false
+    useZone = false,
   ): Observable<ResizeInfo> {
     return new Observable<ResizeInfo>(subscriber => {
       const onObserve = () => subscriber.next(this.checkResize(el, predicate));
 
       const primaryCallback = throttle(onObserve, predicateTimeoutMs);
 
-      const callback = useZone
-        ? () => this.ngZone.run(primaryCallback)
-        : primaryCallback;
+      const callback = useZone ? () => this.ngZone.run(primaryCallback) : primaryCallback;
 
       const resizeObserver = new ResizeObserver(callback);
       resizeObserver.observe(el);
@@ -40,6 +38,6 @@ export class ElementSizeService {
   private checkResize(el: HTMLElement, predicate: (clientRect: ClientRect) => boolean): ResizeInfo {
     const clientRect = el.getBoundingClientRect();
     const predicateValue = predicate(clientRect);
-    return {predicateValue,clientRect};
+    return { predicateValue, clientRect };
   }
 }

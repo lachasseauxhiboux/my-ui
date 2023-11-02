@@ -7,16 +7,9 @@ import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FirstComponent,
-    SecondComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, FirstComponent, SecondComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

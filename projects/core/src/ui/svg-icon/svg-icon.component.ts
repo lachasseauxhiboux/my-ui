@@ -57,7 +57,7 @@ export class SvgIconComponent implements OnInit, OnDestroy, OnChanges, DoCheck {
     private differs: KeyValueDiffers,
     private renderer: Renderer2,
     private iconReg: SvgIconRegistryService,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
   ) {}
 
   ngOnInit() {
@@ -245,13 +245,13 @@ export class SvgIconComponent implements OnInit, OnDestroy, OnChanges, DoCheck {
 
   private applyChanges(changes: KeyValueChanges<string, string | number>) {
     changes.forEachRemovedItem((record: KeyValueChangeRecord<string, string | number>) =>
-      this.setStyle(record.key, null)
+      this.setStyle(record.key, null),
     );
     changes.forEachAddedItem((record: KeyValueChangeRecord<string, string | number>) =>
-      this.setStyle(record.key, record.currentValue)
+      this.setStyle(record.key, record.currentValue),
     );
     changes.forEachChangedItem((record: KeyValueChangeRecord<string, string | number>) =>
-      this.setStyle(record.key, record.currentValue)
+      this.setStyle(record.key, record.currentValue),
     );
   }
 

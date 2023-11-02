@@ -1,6 +1,6 @@
 export function ButtonTypeDecorator(): ClassDecorator {
   return function (constructor: any) {
-    const originalNgAfterViewInit = constructor.prototype.ngAfterViewInit || function () { };
+    const originalNgAfterViewInit = constructor.prototype.ngAfterViewInit || function () {};
 
     constructor.prototype.ngAfterViewInit = function () {
       originalNgAfterViewInit.call(this);
@@ -30,6 +30,5 @@ export function ButtonTypeDecorator(): ClassDecorator {
     constructor.prototype.hasText = function () {
       return !!this.text?.nativeElement?.childNodes.length;
     };
-  }
+  };
 }
-

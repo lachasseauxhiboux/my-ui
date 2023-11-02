@@ -1,4 +1,3 @@
-
 /*
  * UI
  * */
@@ -33,4 +32,3 @@ export * from './models';
  * Core module
  * */
 export * from './core.module';
-

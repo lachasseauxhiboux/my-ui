@@ -8,23 +8,9 @@ import { CoreModule, SvgIconModule } from '@core';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    CoreModule,
-    FormsModule,
-
-    SvgIconModule.forRoot(),
-
-    AppRoutingModule,
-  ],
- providers: [
-   Location,
-   {provide: LocationStrategy, useClass: HashLocationStrategy}
-  ],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent],
+  imports: [BrowserModule, BrowserAnimationsModule, CoreModule, FormsModule, SvgIconModule.forRoot(), AppRoutingModule],
+  providers: [Location, { provide: LocationStrategy, useClass: HashLocationStrategy }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

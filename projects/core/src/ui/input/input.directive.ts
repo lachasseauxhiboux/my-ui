@@ -1,12 +1,5 @@
 import { FocusMonitor } from '@angular/cdk/a11y';
-import {
-  Directive,
-  ElementRef,
-  HostBinding,
-  Input,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { Directive, ElementRef, HostBinding, Input, OnDestroy, OnInit } from '@angular/core';
 import { MySize } from '../../models/size.type';
 
 @Directive({
@@ -42,7 +35,7 @@ export class InputDirective implements OnInit, OnDestroy {
 
   constructor(
     private focusMonitor: FocusMonitor,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
   ) {
     InputDirective.uniqueId++;
     this.id = `my-input-id-${InputDirective.uniqueId++}`;

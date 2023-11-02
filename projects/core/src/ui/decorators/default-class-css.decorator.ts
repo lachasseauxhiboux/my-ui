@@ -1,6 +1,6 @@
 export function DefaultCssClassDecorator(defaultClass: string): ClassDecorator {
   return function (constructor: any) {
-    const originalOnInit = constructor.prototype.ngOnInit || function () { };
+    const originalOnInit = constructor.prototype.ngOnInit || function () {};
 
     constructor.prototype.ngOnInit = function () {
       originalOnInit.call(this);
@@ -10,4 +10,3 @@ export function DefaultCssClassDecorator(defaultClass: string): ClassDecorator {
     };
   };
 }
-

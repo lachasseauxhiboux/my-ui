@@ -1,30 +1,20 @@
-import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
-import { CheckboxDemoComponent } from "./checkbox-demo/checkbox.component";
-import { FormsModule } from "@angular/forms";
-import { CheckboxModule } from "@core/ui/checkbox";
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { CheckboxDemoComponent } from './checkbox-demo/checkbox.component';
+import { FormsModule } from '@angular/forms';
+import { CheckboxModule } from '@core/ui/checkbox';
 
-const routes = [{path: '', component: CheckboxDemoComponent}];
+const routes = [{ path: '', component: CheckboxDemoComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class CheckboxDemoRoutingModule {
-}
+export class CheckboxDemoRoutingModule {}
 
 @NgModule({
-  declarations: [
-    CheckboxDemoComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    CheckboxModule,
-
-    CheckboxDemoRoutingModule
-  ]
+  declarations: [CheckboxDemoComponent],
+  imports: [CommonModule, FormsModule, CheckboxModule, CheckboxDemoRoutingModule],
 })
-export class CheckboxDemoModule {
-}
+export class CheckboxDemoModule {}

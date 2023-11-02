@@ -17,7 +17,7 @@ export class SvgIconRegistryService {
     private loader: SvgLoader,
     @Inject(PLATFORM_ID) private platformId: Object,
     @Optional() @Inject(SERVER_URL) protected serverUrl: string,
-    @Optional() @Inject(DOCUMENT) private _document: any
+    @Optional() @Inject(DOCUMENT) private _document: any,
   ) {
     this.document = this._document;
   }
@@ -56,7 +56,7 @@ export class SvgIconRegistryService {
       tap(svg => this.iconsByUrl.set(name, svg)),
       catchError(err => throwError(err)),
       finalize(() => this.iconsLoadingByUrl.delete(name)),
-      share()
+      share(),
     ) as Observable<SVGElement>;
 
     this.iconsLoadingByUrl.set(name, o);
@@ -87,7 +87,7 @@ export function SVG_ICON_REGISTRY_PROVIDER_FACTORY(
   // eslint-disable-next-line @typescript-eslint/ban-types
   platformId: object,
   serverUrl?: string,
-  document?: any
+  document?: any,
 ) {
   return parentRegistry || new SvgIconRegistryService(loader, platformId, serverUrl!, document);
 }

@@ -17,14 +17,6 @@ export class InputDemoRoutingModule {}
 
 @NgModule({
   declarations: [InputDemoComponent],
-  imports: [
-    CommonModule,
-    InputModule,
-    FormsModule,
-    HttpClientModule,
-    SvgIconModule.forRoot(),
-
-    InputDemoRoutingModule,
-  ],
+  imports: [CommonModule, InputModule, FormsModule, HttpClientModule, SvgIconModule.forRoot(), InputDemoRoutingModule],
 })
 export class InputDemoModule {}

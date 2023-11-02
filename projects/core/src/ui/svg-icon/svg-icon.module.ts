@@ -15,15 +15,10 @@ export interface SvgIconConfig {
   exports: [SvgIconComponent],
 })
 export class SvgIconModule {
-  static forRoot(
-    config: SvgIconConfig = {}
-  ): ModuleWithProviders<SvgIconModule> {
+  static forRoot(config: SvgIconConfig = {}): ModuleWithProviders<SvgIconModule> {
     return {
       ngModule: SvgIconModule,
-      providers: [
-        SVG_ICON_REGISTRY_PROVIDER,
-        config.loader || { provide: SvgLoader, useClass: SvgHttpLoader },
-      ],
+      providers: [SVG_ICON_REGISTRY_PROVIDER, config.loader || { provide: SvgLoader, useClass: SvgHttpLoader }],
     };
   }
 }

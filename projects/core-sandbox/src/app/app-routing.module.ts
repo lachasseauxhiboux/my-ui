@@ -5,17 +5,17 @@ import { SecondComponent } from './second/second.component';
 
 const routes: Routes = [
   {
-    path:'first',
-    component:FirstComponent
+    path: 'first',
+    component: FirstComponent,
   },
   {
-    path:'second',
-    component:SecondComponent
-  }
-]
+    path: 'second',
+    component: SecondComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

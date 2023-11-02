@@ -1,14 +1,8 @@
-const BUTTON_VARIANTS = [
-  'my-button',
-  'my-round-button',
-  'my-action-button',
-  'my-icon-button',
-  'my-link-button'
-];
+const BUTTON_VARIANTS = ['my-button', 'my-round-button', 'my-action-button', 'my-icon-button', 'my-link-button'];
 
 export function ButtonBaseDecorator(): ClassDecorator {
   return function (constructor: any) {
-    const originalNgOnInit = constructor.prototype.ngOnInit || function () { };
+    const originalNgOnInit = constructor.prototype.ngOnInit || function () {};
 
     constructor.prototype.ngOnInit = function () {
       originalNgOnInit.call(this);
@@ -25,6 +19,5 @@ export function ButtonBaseDecorator(): ClassDecorator {
         this.elementRef.nativeElement.classList.add(buttonAttribute);
       }
     };
-  }
+  };
 }
-

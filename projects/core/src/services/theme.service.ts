@@ -1,5 +1,5 @@
-import {OverlayRef} from '@angular/cdk/overlay';
-import {Injectable, InjectionToken} from '@angular/core';
+import { OverlayRef } from '@angular/cdk/overlay';
+import { Injectable, InjectionToken } from '@angular/core';
 
 export const THEME = new InjectionToken('Color theme');
 

@@ -1,8 +1,17 @@
-import { FocusMonitor } from "@angular/cdk/a11y";
-import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, Input, OnInit, Renderer2, ViewEncapsulation } from "@angular/core";
-import { DestroyService } from "@core";
-import { ButtonBaseDecorator, FocusMonitorDecorator } from "@core/ui/decorators";
-import { filter, fromEvent, takeUntil } from "rxjs";
+import { FocusMonitor } from '@angular/cdk/a11y';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  HostBinding,
+  Input,
+  OnInit,
+  Renderer2,
+  ViewEncapsulation,
+} from '@angular/core';
+import { DestroyService } from '@core';
+import { ButtonBaseDecorator, FocusMonitorDecorator } from '@core/ui/decorators';
+import { filter, fromEvent, takeUntil } from 'rxjs';
 
 @ButtonBaseDecorator()
 @FocusMonitorDecorator()
@@ -11,7 +20,7 @@ import { filter, fromEvent, takeUntil } from "rxjs";
   template: '<ng-content></ng-content>',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [DestroyService]
+  providers: [DestroyService],
 })
 export class LinkButtonComponent implements OnInit {
   @Input()
@@ -27,7 +36,7 @@ export class LinkButtonComponent implements OnInit {
     public elementRef: ElementRef,
     public focusMonitor: FocusMonitor,
     public renderer: Renderer2,
-    private destroyService: DestroyService
+    private destroyService: DestroyService,
   ) {
     this.focusMonitor = focusMonitor;
     this.elementRef = elementRef;
@@ -44,7 +53,7 @@ export class LinkButtonComponent implements OnInit {
     fromEvent<Event>(el.parentNode, 'click', { capture: true })
       .pipe(
         filter(() => this.disabled),
-        takeUntil(this.destroyService)
+        takeUntil(this.destroyService),
       )
       .subscribe((event: Event) => {
         this.preventAndStopEvent(event);
@@ -55,4 +64,4 @@ export class LinkButtonComponent implements OnInit {
     event.preventDefault();
     event.stopImmediatePropagation();
   }
- }
+}

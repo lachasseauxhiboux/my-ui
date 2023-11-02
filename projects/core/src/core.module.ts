@@ -4,17 +4,10 @@ import { SvgIconModule } from './ui/svg-icon';
 import { HttpClientModule } from '@angular/common/http';
 import { ButtonModule } from './ui/button';
 
-const modules = [
-  HttpClientModule,
-  ButtonModule,
-  InputModule,
-  SvgIconModule
-]
+const modules = [HttpClientModule, ButtonModule, InputModule, SvgIconModule];
 
 @NgModule({
-  imports: [ ...modules ],
-  exports: [ ...modules ]
+  imports: [...modules],
+  exports: [...modules],
 })
-export class CoreModule {
-}
-
+export class CoreModule {}

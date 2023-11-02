@@ -1,1 +1,1 @@
-export * from './core-pipes.module'
+export * from './core-pipes.module';

@@ -1,21 +1,19 @@
-import {Directive, EmbeddedViewRef, Input, TemplateRef, ViewContainerRef} from '@angular/core';
+import { Directive, EmbeddedViewRef, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
 export class NgWithContext<T> {
-  constructor(public $implicit: T | null | undefined) {
-  }
+  constructor(public $implicit: T | null | undefined) {}
 }
 
 @Directive({
-  selector: '[ngWith][ngWithAs]'
+  selector: '[ngWith][ngWithAs]',
 })
 export class NgWithDirective<T> {
-
   value: T | null | undefined = null;
   ref?: EmbeddedViewRef<NgWithContext<T>>;
 
   constructor(
     private template: TemplateRef<NgWithContext<T>>,
-    private vcr: ViewContainerRef
+    private vcr: ViewContainerRef,
   ) {}
 
   get ngWithAs(): T | null | undefined {
