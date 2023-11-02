@@ -18,14 +18,14 @@ export class AppComponent {
 
   readonly THEME = Theme;
 
-  selectedTheme = Theme.DARK;
+  selectedTheme = Theme.LIGHT;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private themeService: ThemeService,
   ) {
-    this.setTheme(Theme.DARK);
+    this.setTheme(Theme.LIGHT);
   }
 
   setTheme(theme: Theme) {

@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
 import { RadioButtonsDemoComponent } from "./radio-buttons-demo/radio-buttons-demo.component";
 import { RouterModule } from "@angular/router";
-import { RadioButtonsModule } from "@core/ui/radio-buttons";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
+import { RadioButtonsModule } from "@core/ui/radio";
 
 const routes = [{path: '', component: RadioButtonsDemoComponent}];
 

@@ -20,7 +20,17 @@
   </main>
 
   <aside class="grid-sidebar-right flex-layout-column">
-    <!-- Right Sidebar Content -->
+      <my-radio-buttons title="Theme">
+        <my-radio-button
+          (ngModelChange)="setTheme($event)"
+          [ngModel]="selectedTheme"
+          [value]="THEME.DARK"
+          >Dark</my-radio-button>
+        <my-radio-button
+          (ngModelChange)="setTheme($event)"
+          [ngModel]="selectedTheme"
+          [value]="THEME.LIGHT">Light</my-radio-button>
+    </my-radio-buttons>
   </aside>
 
   <footer class="grid-footer flex-layout-row" *ngIf="showFooter">

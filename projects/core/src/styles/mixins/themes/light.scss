@@ -1,14 +1,18 @@
 @import "button/light";
-@import "interactive-elements/light";
+@import "checkbox/light";
 @import "font-colors/light";
+@import "interactive-elements/light";
 @import "input/light";
+@import "radio-button/light";
 
 @mixin light($prefix: '') {
 
   @include button-light($prefix);
+  @include checkbox-light($prefix);
   @include font-colors-light($prefix);
   @include input-light($prefix);
   @include interactive-elements-light($prefix);
+  @include radio-button-light($prefix);
 
   --#{$prefix}primary-color: 23, 155, 229; // #179BE5
   --#{$prefix}primary-hover-color: 21, 140, 206; // #3E9284

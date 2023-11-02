@@ -31,8 +31,8 @@ $transition-duration: .2s;
     height: $circle-size;
     max-height: $circle-size;
     border-radius: 50%;
-    border: solid 1px get-color(radio-border);
-    background-color: get-color(radio-bg);
+    border: solid 1px get-color(radio-button-border);
+    background-color: get-color(radio-button-bg);
     transition: all $transition-duration ease-in;
     transition-property: border-color, box-shadow;
   }
@@ -43,7 +43,7 @@ $transition-duration: .2s;
     height: $dot-size;
     pointer-events: none;
     border-radius: 50%;
-    background-color: get-color(radio-dot-bg);
+    background-color: get-color(radio-button-dot-bg);
     transform: scale(0);
     transition: all $transition-duration ease-in;
     transition-property: transform, background-color;
@@ -53,7 +53,7 @@ $transition-duration: .2s;
   }
 
   input:not([disabled]):checked:hover ~ .radio-button_btn .radio-button_dot {
-    background-color: get-color(radio-dot-bg-hover);
+    background-color: get-color(radio-button-dot-bg-hover);
   }
 
   .radio-button_label {
@@ -64,26 +64,26 @@ $transition-duration: .2s;
 
     &:hover {
       input:checked:not([disabled]) ~ .radio-button_btn .radio-button_circle {
-        border-color: get-color(radio-checked-border-hover);
+        border-color: get-color(radio-button-checked-border-hover);
       }
       input:not(:checked):not([disabled]) ~ .radio-button_btn .radio-button_circle {
-        border-color: get-color(radio-unchecked-border-hover);
+        border-color: get-color(radio-button-unchecked-border-hover);
       }
     }
 
     &:active {
       input:checked:not([disabled]) ~ .radio-button_btn .radio-button_circle {
-        border-color: get-color(radio-checked-border-click);
+        border-color: get-color(radio-button-checked-border-click);
         transition: none;
       }
 
       input:not(:checked):not([disabled]) ~ .radio-button_btn .radio-button_circle {
-        border-color: get-color(radio-unchecked-border-click);
+        border-color: get-color(radio-button-unchecked-border-click);
         transition: none;
       }
 
       input:not([disabled]) ~ .radio-button_btn .radio-button_dot {
-        background-color: get-color(radio-dot-bg-click);
+        background-color: get-color(radio-button-dot-bg-click);
         transition: none;
       }
     }
@@ -106,12 +106,12 @@ $transition-duration: .2s;
   }
 
   input[disabled] ~ .radio-button_btn .radio-button_dot {
-    background-color: get-color(radio-dot-bg-disabled);
+    background-color: get-color(radio-button-dot-bg-disabled);
   }
 
   input[disabled] ~ .radio-button_btn .radio-button_circle {
-    border-color: get-color(radio-border-disabled, radio-border-disabled-transparency);
-    background-color: get-color(radio-bg-disabled);
+    border-color: get-color(radio-btton-border-disabled, radio-button-border-disabled-transparency);
+    background-color: get-color(radio-button-bg-disabled);
   }
 
   input[disabled] ~ .radio-button_btn .radio-button_text {

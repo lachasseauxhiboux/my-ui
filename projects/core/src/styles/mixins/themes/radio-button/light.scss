@@ -1,0 +1,19 @@
+@mixin radio-button-light($theme: '') {
+  --#{$theme}radio-button-bg: var(--light--neutral-color-2);
+  --#{$theme}radio-button-bg-disabled: var(--light--btn-disabled-color);
+
+  --#{$theme}radio-button-border: var(--light--btn-color);
+  --#{$theme}radio-button-border-disabled: var(--light--white-100);
+  --#{$theme}radio-button-border-disabled-transparency: var(--transparency-5);
+
+  --#{$theme}radio-button-unchecked-border-hover: var(--light--btn-hover-color);
+  --#{$theme}radio-button-unchecked-border-click: var(--light--btn-click-color);
+
+  --#{$theme}radio-button-checked-border-hover: var(--light--primary-hover-color);
+  --#{$theme}radio-button-checked-border-click: var(--light--primary-click-color);
+
+  --#{$theme}radio-button-dot-bg: var(--light--primary-color);
+  --#{$theme}radio-button-dot-bg-hover: var(--light--primary-hover-color);
+  --#{$theme}radio-button-dot-bg-click: var(--light--primary-click-color);
+  --#{$theme}radio-button-dot-bg-disabled: var(--light--font-disabled-color);
+}

@@ -1,14 +1,18 @@
 @import "button/dark";
-@import "interactive-elements/dark";
+@import "checkbox/dark";
 @import "font-colors/dark";
+@import "interactive-elements/dark";
 @import "input/dark";
+@import "radio-button/dark";
 
 @mixin dark($prefix: '') {
 
   @include button-dark($prefix);
+  @include checkbox-dark($prefix);
   @include font-colors-dark($prefix);
   @include input-dark($prefix);
   @include interactive-elements-dark($prefix);
+  @include radio-button-dark($prefix);
 
   --#{$prefix}primary-color: 23, 155, 229; // #179BE5
   --#{$prefix}primary-hover-color: 25, 170, 252; // #19AAFС

@@ -1,6 +1,7 @@
 @mixin interactive-elements-light($theme: '') {
   /* Defaults */
-  --#{$theme}interactive-main: var(--light--primary-color);
+  --#{$theme}interactive-main-primary: var(--light--primary-color);
+  --#{$theme}interactive-main-secondary: var(--light--secondary-color);
   --#{$theme}interactive-main-border: var(--light--black-100);
   --#{$theme}interactive-main-border-transparency: .05;
   --#{$theme}interactive-bg: var(--light--white-100);

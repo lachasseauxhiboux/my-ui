@@ -24,7 +24,7 @@ const DEFAULT_CSS_CLASS = 'my-radio-button';
     },
   ],
 })
-export class RadioButtonComponent<T> implements ControlValueAccessor{
+export class RadioButtonComponent<T> implements ControlValueAccessor {
   @Input()
   id: unknown;
 

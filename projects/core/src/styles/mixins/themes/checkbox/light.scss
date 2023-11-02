@@ -1,0 +1,20 @@
+@mixin checkbox-light($theme: '') {
+  /** unchecked */
+  --#{$theme}checkbox-unchecked-bg: var(--light--neutral-color-2);
+  --#{$theme}checkbox-unchecked-bg-disabled: var(--light--btn-disabled-color);
+
+  --#{$theme}checkbox-unchecked-border: var(--light--btn-color);
+  --#{$theme}checkbox-unchecked-border-hover: var(--light--btn-hover-color);
+  --#{$theme}checkbox-unchecked-border-click: var(--light--btn-click-color);
+  --#{$theme}checkbox-unchecked-border-disabled: var(--light--white-100);
+  --#{$theme}checkbox-unchecked-border-disabled-transparency: var(--transparency-5);
+
+  /** checked */
+  --#{$theme}checkbox-checked-bg: var(--light--primary-color);
+  --#{$theme}checkbox-checked-bg-hover: var(--light--primary-hover-color);
+  --#{$theme}checkbox-checked-bg-click: var(--light--primary-click-color);
+  --#{$theme}checkbox-checked-bg-disabled: var(--light--btn-disabled-color);
+
+  --#{$theme}checkbox-checked-border: var(--light--white-100);
+  --#{$theme}checkbox-checked-border-transparency: var(--transparency-5);
+}
