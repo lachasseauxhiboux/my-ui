@@ -1,0 +1,13 @@
+@import "../../styles/get-color";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &.horizontal {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

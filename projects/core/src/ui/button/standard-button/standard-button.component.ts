@@ -8,7 +8,6 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import { ButtonAlign } from '../button.types';
 import { ButtonTypeDecorator } from '../../decorators/button-type.decorator';
 import { ColorDecorator } from '../../decorators/color.decorator';
 import { FocusMonitorDecorator } from '../../decorators/focus-monitor.decorator';
@@ -17,6 +16,8 @@ import { FocusMonitor } from '@angular/cdk/a11y';
 import { DefaultCssClassDecorator } from '@core/ui/decorators';
 
 const DEFAULT_CSS_CLASS = 'my-button';
+
+export type ButtonAlign = 'center' | 'left';
 
 @DefaultCssClassDecorator(DEFAULT_CSS_CLASS)
 @ButtonTypeDecorator()

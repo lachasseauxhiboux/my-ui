@@ -8,6 +8,7 @@ export const sections: Section[] = [
   { title: 'Checkbox', url: 'checkbox' },
   { title: 'Icon buttons', url: 'icon-buttons' },
   { title: 'Link buttons', url: 'link-buttons' },
+  { title: 'Radio buttons', url: 'radio-buttons' },
   { title: 'Round buttons', url: 'round-buttons' },
   { title: 'Standard buttons', url: 'standard-buttons' },
   { title: 'Input', url: 'input' },

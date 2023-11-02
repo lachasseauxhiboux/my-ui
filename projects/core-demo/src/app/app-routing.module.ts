@@ -24,6 +24,10 @@ const routes: Routes = [
     loadChildren: () => import('./stories/link-buttons/link-buttons-demo.module').then(m => m.LinkButtonsDemoModule),
   },
   {
+    path: 'radio-buttons',
+    loadChildren: () => import('./stories/radio-buttons/radio-buttons-demo.module').then(m => m.RadioButtonsDemoModule),
+  },
+  {
     path: 'round-buttons',
     loadChildren: () => import('./stories/round-buttons/round-buttons-demo.module').then(m => m.RoundButtonsDemoModule),
   },

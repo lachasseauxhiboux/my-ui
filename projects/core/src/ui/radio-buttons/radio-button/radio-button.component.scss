@@ -1,0 +1,138 @@
+@use "sass:math";
+
+@import "../../../styles/get-color";
+@import "../../../styles/mixins/kb-focused-border";
+@import "../../../styles/mixins/visually-hidden";
+
+$circle-size: 18px;
+$dot-size: 8px;
+$circle-dot-edge: math.div($circle-size - $dot-size, 2);
+$transition-duration: .2s;
+
+.my-radio-button {
+  margin: 5px;
+  display: inline-block;
+  max-width: fit-content;
+
+  .radio-button_btn {
+    width: 18px;
+    height: 18px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: block;
+    position: relative;
+  }
+
+  .radio-button_circle {
+    min-width: $circle-size;
+    width: $circle-size;
+    max-width: $circle-size;
+    min-height: $circle-size;
+    height: $circle-size;
+    max-height: $circle-size;
+    border-radius: 50%;
+    border: solid 1px get-color(radio-border);
+    background-color: get-color(radio-bg);
+    transition: all $transition-duration ease-in;
+    transition-property: border-color, box-shadow;
+  }
+
+  .radio-button_dot {
+    margin: 0;
+    width: $dot-size;
+    height: $dot-size;
+    pointer-events: none;
+    border-radius: 50%;
+    background-color: get-color(radio-dot-bg);
+    transform: scale(0);
+    transition: all $transition-duration ease-in;
+    transition-property: transform, background-color;
+    position: relative;
+    left: $circle-dot-edge;
+    top: -$dot-size - $circle-dot-edge;
+  }
+
+  input:not([disabled]):checked:hover ~ .radio-button_btn .radio-button_dot {
+    background-color: get-color(radio-dot-bg-hover);
+  }
+
+  .radio-button_label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      input:checked:not([disabled]) ~ .radio-button_btn .radio-button_circle {
+        border-color: get-color(radio-checked-border-hover);
+      }
+      input:not(:checked):not([disabled]) ~ .radio-button_btn .radio-button_circle {
+        border-color: get-color(radio-unchecked-border-hover);
+      }
+    }
+
+    &:active {
+      input:checked:not([disabled]) ~ .radio-button_btn .radio-button_circle {
+        border-color: get-color(radio-checked-border-click);
+        transition: none;
+      }
+
+      input:not(:checked):not([disabled]) ~ .radio-button_btn .radio-button_circle {
+        border-color: get-color(radio-unchecked-border-click);
+        transition: none;
+      }
+
+      input:not([disabled]) ~ .radio-button_btn .radio-button_dot {
+        background-color: get-color(radio-dot-bg-click);
+        transition: none;
+      }
+    }
+  }
+
+  input:checked ~ .radio-button_btn .radio-button_dot {
+    transform: scale(1);
+  }
+
+  &.grow {
+    .radio-button_text {
+      width: 100%;
+    }
+  }
+
+  .radio-button_text {
+    padding-left: 10px;
+    margin: 0;
+    color: get-color(font-main-color);
+  }
+
+  input[disabled] ~ .radio-button_btn .radio-button_dot {
+    background-color: get-color(radio-dot-bg-disabled);
+  }
+
+  input[disabled] ~ .radio-button_btn .radio-button_circle {
+    border-color: get-color(radio-border-disabled, radio-border-disabled-transparency);
+    background-color: get-color(radio-bg-disabled);
+  }
+
+  input[disabled] ~ .radio-button_btn .radio-button_text {
+    color: get-color(font-disabled-color);
+  }
+}
+
+.my-radio-button.cdk-keyboard-focused {
+  .radio-button_circle {
+    @include kb-focused-border
+  }
+}
+
+.my-radio-button.disabled {
+  .radio-button_label {
+    cursor: not-allowed;
+  }
+}
+
+.my-radio-button {
+  .visually-hidden {
+    @include visually-hidden;
+  }
+}

@@ -1,0 +1,17 @@
+<div class="radio-demo">
+  <my-radio-buttons title="Vertical layout">
+    <my-radio-button *ngFor="let i of items" [(ngModel)]="selectedItem" [value]="i">{{i}}</my-radio-button>
+  </my-radio-buttons>
+
+  <my-radio-buttons title="Horizontal layout" layout="horizontal">
+    <my-radio-button *ngFor="let i of items" [(ngModel)]="selectedItem" [value]="i">{{i}}</my-radio-button>
+  </my-radio-buttons>
+
+  <my-radio-buttons title="Disabled">
+    <my-radio-button *ngFor="let i of items" [(ngModel)]="selectedItem" [value]="i" [disabled]="true">{{i}}</my-radio-button>
+  </my-radio-buttons>
+</div>
+
+<p class="selected">
+  selected item: {{selectedItem}}
+</p>

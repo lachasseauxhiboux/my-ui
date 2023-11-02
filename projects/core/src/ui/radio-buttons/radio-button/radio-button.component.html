@@ -1,0 +1,15 @@
+<label class="radio-button_label">
+  <input type="radio-button" class="visually-hidden"
+         [disabled]="disabled"
+         [checked]="checked"
+         [value]="value"
+         [attr.name]="computedName"
+         (change)="onChange($event)">
+  <span class="radio-button_btn">
+    <div class="radio-button_circle"></div>
+    <div class="radio-button_dot"></div>
+  </span>
+  <span class="radio-button_text my-text_body-2">
+    <ng-content></ng-content>
+  </span>
+</label>
