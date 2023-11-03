@@ -1,32 +1,75 @@
-<main style="display: flex; flex-direction: column; justify-content: space-between;">
-  <section>
-    <div class="layout-top-margin_24" style="display: flex; align-items: center">
-      <label class="layout-margin_8" [for]="i1.id">Name*</label>
-      <div class="input-icon-left">
-        <input myInput size="s" [(ngModel)]="value1" placeholder="Name" required #i1="myInput">
-        <div class="icon">
-          <svg-icon src="assets/icons/icon16/exit.svg"></svg-icon>
-        </div>
+<section>
+  <div class="first-section-form-field">
+    <label [for]="i1.id">Name*</label>
+    <div class="input-icon-left">
+      <input myInput size="s" [(ngModel)]="value1" placeholder="Name" required #i1="myInput">
+      <div class="icon">
+        <svg-icon src="assets/icons/icon16/exit.svg"></svg-icon>
       </div>
     </div>
+  </div>
 
-    <div class="layout-top-margin_24" style="display: flex; align-items: center">
-      <label class="layout-margin_8" [for]="i2.id">Password</label>
-      <div class="input-icon-left">
-        <input myInput size="m" type="password" placeholder="Password" [(ngModel)]="value1" #i2="myInput">
-        <div class="icon">
-          <svg-icon src="assets/icons/icon24/exit.svg"></svg-icon>
-        </div>
+  <div class="first-section-form-field">
+    <label class="layout-margin_8" [for]="i2.id">Password</label>
+    <div class="input-icon-left">
+      <input myInput size="m" type="password" placeholder="Password" [(ngModel)]="value1" #i2="myInput">
+      <div class="icon">
+        <svg-icon src="assets/icons/icon24/exit.svg"></svg-icon>
       </div>
     </div>
-    <div class="layout-top-margin_24" style="display: flex; align-items: center">
-      <label class="layout-margin_8" [for]="i3.id">Disabled</label>
-      <div class="input-icon-left">
-        <input myInput disabled size="l" placeholder="Email" [(ngModel)]="value1" #i3="myInput">
-        <div class="icon">
-          <svg-icon src="assets/icons/icon24/exit.svg"></svg-icon>
-        </div>
+  </div>
+  <div class="first-section-form-field">
+    <label class="layout-margin_8" [for]="i3.id">Disabled</label>
+    <div class="input-icon-left">
+      <input myInput disabled size="l" placeholder="Email" [(ngModel)]="value1" #i3="myInput">
+      <div class="icon">
+        <svg-icon src="assets/icons/icon24/exit.svg"></svg-icon>
       </div>
     </div>
-  </section>
-</main>
+  </div>
+</section>
+<section>
+  <my-fl-input [label]= '"Label"'></my-fl-input>
+</section>
+<section style="display: flex; flex-direction: column; width: 200px;">
+  <h3 class="layout-top-margin_24">Flat</h3>
+  <h4 class="layout-top-margin_24">Simple</h4>
+  <div style="display: inline-block;">
+    <input myInput class="flat" [(ngModel)]="value4" placeholder="Name">
+  </div>
+  <div style="background-color: blueviolet">
+    <h4 class="layout-top-margin_24">Transparent</h4>
+    <div>
+      <input myInput class="flat transparent" [(ngModel)]="value4" placeholder="Name">
+    </div>
+  </div>
+  <h4 class="layout-top-margin_24">Disabled</h4>
+  <div style="display: inline-block;">
+    <input myInput class="flat" [disabled]="true" [(ngModel)]="value4" placeholder="Name">
+  </div>
+  <h4 class="layout-top-margin_24">Visible-invalid</h4>
+  <div style="display: inline-block;">
+    <input myInput class="flat visible-invalid" [(ngModel)]="value4" placeholder="Name">
+  </div>
+</section>
+<section style="display: flex; flex-direction: column; width: 200px;">
+  <h3 class="layout-top-margin_24">Flat</h3>
+  <h4 class="layout-top-margin_24">Simple</h4>
+  <div style="display: inline-block;">
+    <input myInput class="rectangle" [(ngModel)]="value4" placeholder="Name">
+  </div>
+  <div style="background-color: blueviolet">
+    <h4 class="layout-top-margin_24">Transparent</h4>
+    <div>
+      <input myInput class="flat transparent" [(ngModel)]="value4" placeholder="Name">
+    </div>
+  </div>
+  <h4 class="layout-top-margin_24">Disabled</h4>
+  <div style="display: inline-block;">
+    <input myInput class="flat" [disabled]="true" [(ngModel)]="value4" placeholder="Name">
+  </div>
+  <h4 class="layout-top-margin_24">Visible-invalid</h4>
+  <div style="display: inline-block;">
+    <input myInput class="flat visible-invalid" [(ngModel)]="value4" placeholder="Name">
+  </div>
+</section>

@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex-direction: column;
+
+  .first-section-form-field {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+    width: 100%;
+
+    label {
+      width: 150px;
+    }
+  }
+}

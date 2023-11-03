@@ -11,10 +11,17 @@ $transitionTime: .2s;
 
 .my-icon-button {
   @include clear-button;
-  @include button-base;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  transition: background-color $transitionTime ease-in;
   background-color: transparent;
   border: none;
   align-items: center;
+
+  &:disabled {
+    @include disabled;
+  }
 
   svg-icon {
     display: flex;

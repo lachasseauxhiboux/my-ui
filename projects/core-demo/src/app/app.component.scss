@@ -1,6 +1,12 @@
 @import "get-color";
+@import "mixins/svg-fill";
+
 $header-height: 60px;
 
+.grid-header {
+  align-items: center;
+  justify-content: center;
+}
 
 .section {
   display: flex;
@@ -30,6 +36,12 @@ $header-height: 60px;
 [theme="dark"] {
   .grid-layout {
     background-color: #0e1824;
+  }
+
+  .grid-header {
+    svg-icon {
+      @include svg-fill(get-color(white-100));
+    }
   }
 }
 

@@ -1,0 +1,64 @@
+@import "../../styles/get-color";
+
+my-spinner {
+  $spinner-z-index: 900;
+  display: flex;
+
+  &.no-wrapper {
+    display: flex;
+
+    .content {
+      display: none;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .spinner {
+    cursor: wait;
+    align-self: center;
+
+    svg {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &.wrapper {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: get-color(neutral-color-2, transparency-60);
+    z-index: $spinner-z-index;
+    cursor: wait;
+
+    .container {
+      position: absolute;
+      top: 50%;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      cursor: wait;
+    }
+
+    .spinner {
+      height: 64px;
+      width: 64px;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      color: get-color(font-main-color);
+    }
+  }
+}

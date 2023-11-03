@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { SvgIconModule } from '@core';
 import { InputModule } from '@core/ui/input/input.module';
 import { InputDemoComponent } from './input-demo/input-demo.component';
+import { InputFloatingLabelModule } from '@core/ui/input-floating-label';
 
 const routes = [{ path: '', component: InputDemoComponent }];
 
@@ -17,6 +18,14 @@ export class InputDemoRoutingModule {}
 
 @NgModule({
   declarations: [InputDemoComponent],
-  imports: [CommonModule, InputModule, FormsModule, HttpClientModule, SvgIconModule.forRoot(), InputDemoRoutingModule],
+  imports: [
+    CommonModule,
+    InputModule,
+    InputFloatingLabelModule,
+    FormsModule,
+    HttpClientModule,
+    SvgIconModule.forRoot(),
+    InputDemoRoutingModule
+  ],
 })
 export class InputDemoModule {}

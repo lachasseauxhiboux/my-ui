@@ -26,3 +26,12 @@
   flex-direction: row-reverse;
 }
 
+.flex-layout-align-center,
+.flex-layout-align-center-center,
+.flex-layout-align-center-start,
+.flex-layout-align-center-end,
+.flex-layout-align-cente-stretch {
+  justify-content: center;
+}
+
+

@@ -12,9 +12,9 @@ $textarea_height_s: 136px;
 $textarea_height_m: 176px;
 $textarea_height_l: 216px;
 
-$border_radius_s: 4px;
-$border_radius_m: 4px;
-$border_radius_l: 8px;
+$border_radius_s: 18px;
+$border_radius_m: 18px;
+$border_radius_l: 24px;
 
 $font_size_s: 12px;
 $font_size_m: 14px;
@@ -28,16 +28,25 @@ input::-ms-clear {
 .my-input[my-size=s] {
   border-radius: $border_radius_s;
   font-size: $font_size_s;
+  &.rectangle {
+    border-radius: 4px;
+  }
 }
 
 .my-input[my-size=m] {
   border-radius: $border_radius_m;
   font-size: $font_size_m;
+  &.rectangle {
+    border-radius: 6px;
+  }
 }
 
 .my-input[my-size=l] {
   border-radius: $border_radius_l;
   font-size: $font_size_l;
+  &.rectangle {
+    border-radius: 6px;
+  }
 }
 
 input {
@@ -143,6 +152,7 @@ input.my-input, textarea.my-input {
     border-color: get-color(error-color);
   }
 
+
   &.flat {
     border: none;
     border-bottom: 1px solid get-color(btn-color);
@@ -161,7 +171,6 @@ input.my-input, textarea.my-input {
 
     &.ng-touched.ng-invalid,
     &.visible-invalid {
-      border-radius: 6px;
       border: 1px solid get-color(error-color);
       background-color: get-color(neutral-color-2);
     }

@@ -1,0 +1,8 @@
+<label [attr.for]="id">{{ label }}</label>
+<div class="input-icon-left">
+  <input myInput size="s" [attr.id]="id" [attr.placeholder]="placeholder" [(ngModel)]="value">
+  <div class="icon" *ngIf="svgUrl">
+    <svg-icon [src]="svgUrl"></svg-icon>
+  </div>
+</div>
+

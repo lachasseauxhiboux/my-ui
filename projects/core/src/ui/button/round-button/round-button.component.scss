@@ -10,9 +10,19 @@ $size_xl: 64px;
 $transitionTime: .2s;
 
 .my-round-button {
+  @include clear-button;
+  @include button-base;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+
+  &:not(:disabled) {
+    @include not-disabled;
+  }
+
+  &:disabled {
+    @include disabled;
+  }
 
   .my-button_icon svg-icon {
     display: flex;
